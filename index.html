@@ -1,732 +1,712 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+
+<!DOCTYPE html>
+<html lang="es">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2299.7">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000; min-height: 14.0px}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000}
-    span.s1 {font-kerning: none}
-    span.Apple-tab-span {white-space:pre}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Guía Ecografía para Pacientes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+      --space-2: 0.5rem;
+      --space-3: 0.75rem;
+      --space-4: 1rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --space-10: 2.5rem;
+      --space-16: 4rem;
+      --color-bg: #f7f6f2;
+      --color-surface: #fbfbf9;
+      --color-surface-2: #f3f0ec;
+      --color-border: #d4d1ca;
+      --color-text: #28251d;
+      --color-text-muted: #7a7974;
+      --color-primary: #01696f;
+      --color-primary-hover: #0c4e54;
+      --radius-md: 0.5rem;
+      --radius-lg: 0.75rem;
+      --shadow-sm: 0 1px 2px rgba(15,15,15,0.08);
+      --shadow-md: 0 4px 12px rgba(15,15,15,0.12);
+      --transition: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+      --content-max: 980px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html {
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--space-16);
+    }
+    body {
+      min-height: 100vh;
+      font-family: 'Work Sans', system-ui, sans-serif;
+      font-size: var(--text-base);
+      line-height: 1.6;
+      color: var(--color-text);
+      background: radial-gradient(circle at top left, #ffffff 0, #f7f6f2 35%, #edeae5 100%);
+      padding-bottom: var(--space-16);
+    }
+    img { max-width: 100%; display: block; height: auto; }
+
+    .page {
+      max-width: var(--content-max);
+      margin: 0 auto;
+      padding: var(--space-6) var(--space-4);
+    }
+    header.page-header {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-6);
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: var(--space-8);
+    }
+    .brand { display: flex; align-items: center; gap: var(--space-3); }
+    .brand-mark {
+      width: 52px;
+      height: 52px;
+      border-radius: 18px;
+      background: radial-gradient(circle at 30% 20%, #ffffff 0, #e2f0f1 40%, #01696f 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-md);
+    }
+    .brand-mark svg { width: 32px; height: 32px; }
+    .brand-text-title { font-size: var(--text-xl); font-weight: 600; letter-spacing: 0.02em; }
+    .brand-text-sub { font-size: var(--text-sm); color: var(--color-text-muted); }
+    .hero-copy { max-width: 30rem; }
+    .hero-title { font-size: var(--text-2xl); line-height: 1.1; margin-bottom: var(--space-3); }
+    .hero-lead { color: var(--color-text-muted); font-size: var(--text-sm); }
+    .hero-illustration {
+      flex: 0 0 auto;
+      min-width: 220px;
+      max-width: 260px;
+      margin-left: auto;
+      align-self: flex-end;
+    }
+    .hero-illustration-figure {
+      background: var(--color-surface);
+      border-radius: var(--radius-lg);
+      padding: var(--space-4);
+      box-shadow: var(--shadow-md);
+      border: 1px solid rgba(40,37,29,0.04);
+    }
+    .hero-illustration-caption {
+      margin-top: var(--space-2);
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+      text-align: center;
+    }
+    .intro {
+      margin-bottom: var(--space-6);
+      background: rgba(255,255,255,0.8);
+      border-radius: var(--radius-lg);
+      padding: var(--space-4);
+      border: 1px solid rgba(40,37,29,0.04);
+      box-shadow: var(--shadow-sm);
+    }
+    .intro p + p { margin-top: var(--space-3); }
+    .sections-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: var(--space-6);
+      align-items: flex-start;
+    }
+    @media (max-width: 768px) {
+      header.page-header { flex-direction: column; align-items: flex-start; }
+      .hero-illustration { margin-left: 0; align-self: stretch; }
+      .sections-grid { grid-template-columns: minmax(0,1fr); }
+    }
+    .exam-list { display: flex; flex-direction: column; gap: var(--space-3); }
+    details.exam {
+      background: var(--color-surface);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-border);
+      box-shadow: var(--shadow-sm);
+      padding: var(--space-3) var(--space-4);
+      transition: box-shadow var(--transition), border-color var(--transition), transform var(--transition), background-color var(--transition);
+    }
+    details.exam[open] {
+      box-shadow: var(--shadow-md);
+      border-color: var(--color-primary);
+      transform: translateY(-1px);
+      background: linear-gradient(145deg, #ffffff, #f5fbfb);
+    }
+    details.exam > summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-3);
+      font-size: var(--text-sm);
+      font-weight: 600;
+    }
+    details.exam > summary::-webkit-details-marker { display: none; }
+    .exam-summary-main { display: flex; flex-direction: column; gap: 0.125rem; }
+    .exam-name { font-weight: 600; }
+    .exam-area {
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-text-muted);
+    }
+    .exam-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      border: 1px solid rgba(1,105,111,0.18);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-primary);
+      background: radial-gradient(circle at 30% 20%, #ffffff 0, #e3f2f3 60%, #c5e6e7 100%);
+      flex-shrink: 0;
+      font-size: 0.65rem;
+      font-weight: 700;
+    }
+    .exam-content {
+      margin-top: var(--space-3);
+      display: grid;
+      grid-template-columns: minmax(0,1.2fr) minmax(0,1fr);
+      gap: var(--space-4);
+      align-items: flex-start;
+    }
+    @media (max-width: 640px) {
+      .exam-content { grid-template-columns: minmax(0,1fr); }
+    }
+    .exam-text-block { display: grid; gap: var(--space-3); align-content: flex-start; }
+    .contra {
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-text-muted);
+    }
+    .exam-text-block p { font-size: var(--text-sm); }
+    .contra {
+      border-left: 3px solid #b45309;
+      padding-left: var(--space-3);
+      background: rgba(255,247,237,0.7);
+      border-radius: var(--radius-md);
+    }
+    .exam-image-card {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: var(--color-surface-2);
+      border: 1px solid rgba(40,37,29,0.07);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+    }
+    .exam-image-card img { width: 100%; object-fit: cover; }
+    .exam-image-caption {
+      padding: var(--space-2) var(--space-3) var(--space-3);
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+    }
+    .aside-panel {
+      background: rgba(1,105,111,0.08);
+      border-radius: var(--radius-lg);
+      padding: var(--space-4);
+      border: 1px dashed rgba(1,105,111,0.3);
+      font-size: var(--text-sm);
+      display: grid;
+      gap: var(--space-3);
+    }
+    .aside-panel h2 { font-size: var(--text-lg); }
+    .aside-list { list-style: disc; padding-left: 1.25rem; color: var(--color-text-muted); }
+    .aside-list li + li { margin-top: 0.25rem; }
+    footer.page-footer {
+      margin-top: var(--space-8);
+      padding-top: var(--space-4);
+      border-top: 1px solid rgba(40,37,29,0.06);
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+    }
+  
+    .exam-text-list {
+      font-size: var(--text-xs);
+      margin: 0.25rem 0 0 1.25rem;
+      color: #ca8a04;
+    }
+    .exam-text-list li {
+      margin-top: 0.25rem;
+    }
+    
+    <!--Función que añade o quita la clase 'ampliada’-->
+    function alternarZoom(elemento) {
+      elemento.classList.toggle('ampliada');
+    }
+<!--Proteger el footer automáticament-->
+const observer = new MutationObserver(() => {
+    if (!document.querySelector('footer strong')) {
+        const footer = document.querySelector('footer');
+        if (footer) footer.innerHTML = '<p style="margin:0;text-align:center;">© 2026 <strong>ENMOGA «En compañía y sin rumbo»</strong> - Todos los derechos reservados</p>';
+    }
+});
+observer.observe(document.body, { childList: true, subtree: true });
+
+<!--Bloquear clic derecho y atajos-->
+document.addEventListener('contextmenu', e => e.preventDefault());
+document.addEventListener('keydown', e => {
+    if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I') || (e.ctrlKey && e.key === 'u')) e.preventDefault();
+});
+    
+    		<!--ALINEAR BOTONES-->
+  /* Contenedor para poner botones en línea */
+    .botones-container {
+      display: flex;              /* Pone elementos en línea */
+      gap: 110px;                  /* Separación entre botones (15px) */
+      justify-content: space-between;        /* Alinea verticalmente */
+      text-decoration: none;
+    }
+  
+  
+  					<!--ESTILO BOTONES TIPO ENLACE-->
+   /* Botones de enlace - ANARANJADO y diferente */
+    .btn-link {
+      background: #ff9c14;        /* Anaranjado (diferente del azul) */
+      color: #fff;
+      font-weight: 600;
+      padding: 10px 24px;         /* Tamaño pequeño */
+      font-size: 0.9rem;
+      border-radius: 8px;
+      border: none;
+      text-decoration: none;     /* Sin subrayado */
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(255, 156, 20, 0.4); /* Sombra extra para resaltar */
+      transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-link:hover {
+      background: #e88d0c;        /* Anaranjado más oscuro */
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(255, 156, 20, 0.5);
+    }
+
   </style>
 </head>
+
+					<!--ENCABEZADO-->
 <body>
-<p class="p1"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
-<p class="p2"><span class="s1">&lt;html lang="es"&gt;</span></p>
-<p class="p2"><span class="s1">&lt;head&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8" /&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>&lt;title&gt;Guía Ecografía para Pacientes&lt;/title&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>&lt;link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>&lt;style&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>:root {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>--text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>--text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>--text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>--text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>--text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>--text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>--space-2: 0.5rem;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>--space-3: 0.75rem;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>--space-4: 1rem;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>--space-6: 1.5rem;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>--space-8: 2rem;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>--space-10: 2.5rem;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>--space-16: 4rem;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>--color-bg: #f7f6f2;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>--color-surface: #fbfbf9;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>--color-surface-2: #f3f0ec;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>--color-border: #d4d1ca;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>--color-text: #28251d;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>--color-text-muted: #7a7974;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>--color-primary: #01696f;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>--color-primary-hover: #0c4e54;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>--radius-md: 0.5rem;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>--radius-lg: 0.75rem;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>--shadow-sm: 0 1px 2px rgba(15,15,15,0.08);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>--shadow-md: 0 4px 12px rgba(15,15,15,0.12);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>--transition: 180ms cubic-bezier(0.16, 1, 0.3, 1);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>--content-max: 980px;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p1"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>html {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>-webkit-font-smoothing: antialiased;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>text-rendering: optimizeLegibility;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>scroll-behavior: smooth;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>scroll-padding-top: var(--space-16);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>body {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>min-height: 100vh;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>font-family: 'Work Sans', system-ui, sans-serif;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>font-size: var(--text-base);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>line-height: 1.6;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>color: var(--color-text);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>background: radial-gradient(circle at top left, #ffffff 0, #f7f6f2 35%, #edeae5 100%);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>padding-bottom: var(--space-16);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>img { max-width: 100%; display: block; height: auto; }</span></p>
-<p class="p1"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>.page {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>max-width: var(--content-max);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>margin: 0 auto;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>padding: var(--space-6) var(--space-4);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>header.page-header {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>display: flex;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>flex-wrap: wrap;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>gap: var(--space-6);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>align-items: center;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>justify-content: space-between;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>margin-bottom: var(--space-8);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>.brand { display: flex; align-items: center; gap: var(--space-3); }</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>.brand-mark {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>width: 52px;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>height: 52px;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>border-radius: 18px;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>background: radial-gradient(circle at 30% 20%, #ffffff 0, #e2f0f1 40%, #01696f 100%);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>display: flex;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>align-items: center;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>justify-content: center;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>box-shadow: var(--shadow-md);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>.brand-mark svg { width: 32px; height: 32px; }</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>.brand-text-title { font-size: var(--text-xl); font-weight: 600; letter-spacing: 0.02em; }</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>.brand-text-sub { font-size: var(--text-sm); color: var(--color-text-muted); }</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>.hero-copy { max-width: 30rem; }</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>.hero-title { font-size: var(--text-2xl); line-height: 1.1; margin-bottom: var(--space-3); }</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>.hero-lead { color: var(--color-text-muted); font-size: var(--text-sm); }</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>.hero-illustration {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>flex: 0 0 auto;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>min-width: 220px;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>max-width: 260px;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>margin-left: auto;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>align-self: flex-end;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>.hero-illustration-figure {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>background: var(--color-surface);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>border-radius: var(--radius-lg);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>padding: var(--space-4);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>box-shadow: var(--shadow-md);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>border: 1px solid rgba(40,37,29,0.04);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>.hero-illustration-caption {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>margin-top: var(--space-2);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>font-size: var(--text-xs);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>color: var(--color-text-muted);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>text-align: center;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>.intro {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>margin-bottom: var(--space-6);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>background: rgba(255,255,255,0.8);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>border-radius: var(--radius-lg);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>padding: var(--space-4);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>border: 1px solid rgba(40,37,29,0.04);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>box-shadow: var(--shadow-sm);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>.intro p + p { margin-top: var(--space-3); }</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>.sections-grid {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>display: grid;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>gap: var(--space-6);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>align-items: flex-start;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>@media (max-width: 768px) {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>header.page-header { flex-direction: column; align-items: flex-start; }</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>.hero-illustration { margin-left: 0; align-self: stretch; }</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>.sections-grid { grid-template-columns: minmax(0,1fr); }</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>.exam-list { display: flex; flex-direction: column; gap: var(--space-3); }</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>details.exam {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>background: var(--color-surface);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>border-radius: var(--radius-lg);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>border: 1px solid var(--color-border);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>box-shadow: var(--shadow-sm);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>padding: var(--space-3) var(--space-4);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>transition: box-shadow var(--transition), border-color var(--transition), transform var(--transition), background-color var(--transition);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>details.exam[open] {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>box-shadow: var(--shadow-md);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>border-color: var(--color-primary);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>transform: translateY(-1px);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>background: linear-gradient(145deg, #ffffff, #f5fbfb);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>details.exam &gt; summary {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>list-style: none;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>cursor: pointer;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>display: flex;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>align-items: center;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>justify-content: space-between;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>gap: var(--space-3);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>font-size: var(--text-sm);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>font-weight: 600;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>details.exam &gt; summary::-webkit-details-marker { display: none; }</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>.exam-summary-main { display: flex; flex-direction: column; gap: 0.125rem; }</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>.exam-name { font-weight: 600; }</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>.exam-area {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>font-size: var(--text-xs);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>text-transform: uppercase;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>letter-spacing: 0.08em;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>color: var(--color-text-muted);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>.exam-icon {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>width: 24px;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>height: 24px;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>border-radius: 999px;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>border: 1px solid rgba(1,105,111,0.18);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>display: flex;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>align-items: center;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>justify-content: center;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>color: var(--color-primary);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>background: radial-gradient(circle at 30% 20%, #ffffff 0, #e3f2f3 60%, #c5e6e7 100%);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>flex-shrink: 0;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>font-size: 0.65rem;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>font-weight: 700;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>.exam-content {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>margin-top: var(--space-3);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>display: grid;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>grid-template-columns: minmax(0,1.2fr) minmax(0,1fr);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>gap: var(--space-4);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>align-items: flex-start;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>@media (max-width: 640px) {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>.exam-content { grid-template-columns: minmax(0,1fr); }</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>.exam-text-block { display: grid; gap: var(--space-3); align-content: flex-start; }</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>.contra {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>font-size: var(--text-xs);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>text-transform: uppercase;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>letter-spacing: 0.08em;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>color: var(--color-text-muted);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>.exam-text-block p { font-size: var(--text-sm); }</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>.contra {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>border-left: 3px solid #b45309;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>padding-left: var(--space-3);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>background: rgba(255,247,237,0.7);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>border-radius: var(--radius-md);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>.exam-image-card {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>border-radius: var(--radius-md);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>overflow: hidden;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>background: var(--color-surface-2);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>border: 1px solid rgba(40,37,29,0.07);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>box-shadow: var(--shadow-sm);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>display: flex;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>flex-direction: column;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>.exam-image-card img { width: 100%; object-fit: cover; }</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>.exam-image-caption {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>padding: var(--space-2) var(--space-3) var(--space-3);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>font-size: var(--text-xs);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>color: var(--color-text-muted);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>.aside-panel {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>background: rgba(1,105,111,0.08);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>border-radius: var(--radius-lg);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>padding: var(--space-4);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>border: 1px dashed rgba(1,105,111,0.3);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>font-size: var(--text-sm);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>display: grid;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>gap: var(--space-3);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>.aside-panel h2 { font-size: var(--text-lg); }</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>.aside-list { list-style: disc; padding-left: 1.25rem; color: var(--color-text-muted); }</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>.aside-list li + li { margin-top: 0.25rem; }</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>footer.page-footer {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>margin-top: var(--space-8);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>padding-top: var(--space-4);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>border-top: 1px solid rgba(40,37,29,0.06);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>font-size: var(--text-xs);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>color: var(--color-text-muted);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span></span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>.exam-text-list {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>font-size: var(--text-xs);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>margin: 0.25rem 0 0 1.25rem;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>color: #ca8a04;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>.exam-text-list li {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>margin-top: 0.25rem;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;!--Función que añade o quita la clase 'ampliada’--&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>function alternarZoom(elemento) {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>elemento.classList.toggle('ampliada');</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1">&lt;!--Proteger el footer automáticament--&gt;</span></p>
-<p class="p2"><span class="s1">const observer = new MutationObserver(() =&gt; {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>if (!document.querySelector('footer strong')) {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>const footer = document.querySelector('footer');</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>if (footer) footer.innerHTML = '&lt;p style="margin:0;text-align:center;"&gt;© 2026 &lt;strong&gt;ENMOGA «En compañía y sin rumbo»&lt;/strong&gt; - Todos los derechos reservados&lt;/p&gt;';</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1">});</span></p>
-<p class="p2"><span class="s1">observer.observe(document.body, { childList: true, subtree: true });</span></p>
-<p class="p1"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1">&lt;!--Bloquear clic derecho y atajos--&gt;</span></p>
-<p class="p2"><span class="s1">document.addEventListener('contextmenu', e =&gt; e.preventDefault());</span></p>
-<p class="p2"><span class="s1">document.addEventListener('keydown', e =&gt; {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>if (e.key === 'F12' || (e.ctrlKey &amp;&amp; e.shiftKey &amp;&amp; e.key === 'I') || (e.ctrlKey &amp;&amp; e.key === 'u')) e.preventDefault();</span></p>
-<p class="p2"><span class="s1">});</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    <span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>&lt;!--ALINEAR BOTONES--&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>/* Contenedor para poner botones en línea */</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>.botones-container {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>display: flex;<span class="Apple-converted-space">              </span>/* Pone elementos en línea */</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>gap: 110px;<span class="Apple-converted-space">                  </span>/* Separación entre botones (15px) */</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>justify-content: space-between;<span class="Apple-converted-space">        </span>/* Alinea verticalmente */</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>text-decoration: none;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span></span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">  <span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>&lt;!--ESTILO BOTONES TIPO ENLACE--&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">   </span>/* Botones de enlace - ANARANJADO y diferente */</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>.btn-link {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>background: #ff9c14;<span class="Apple-converted-space">        </span>/* Anaranjado (diferente del azul) */</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>color: #fff;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>font-weight: 600;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>padding: 10px 24px; <span class="Apple-converted-space">        </span>/* Tamaño pequeño */</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>font-size: 0.9rem;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>border-radius: 8px;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>border: none;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>text-decoration: none; <span class="Apple-converted-space">    </span>/* Sin subrayado */</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>cursor: pointer;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>box-shadow: 0 4px 12px rgba(255, 156, 20, 0.4); /* Sombra extra para resaltar */</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p1"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>.btn-link:hover {</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>background: #e88d0c;<span class="Apple-converted-space">        </span>/* Anaranjado más oscuro */</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>transform: translateY(-2px);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>box-shadow: 0 6px 16px rgba(255, 156, 20, 0.5);</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p1"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</span></p>
-<p class="p2"><span class="s1">&lt;/head&gt;</span></p>
-<p class="p1"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;!--ENCABEZADO--&gt;</span></p>
-<p class="p2"><span class="s1">&lt;body&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>&lt;main class="page"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;header class="page-header"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="brand" aria-label="Ecografía fácil: guía para pacientes"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="brand-mark" aria-hidden="true"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>&lt;svg viewBox="0 0 48 48" role="img" aria-label="Icono de TAC minimalista"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;circle cx="24" cy="20" r="11" fill="none" stroke="currentColor" stroke-width="2" /&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;circle cx="24" cy="20" r="4" fill="none" stroke="currentColor" stroke-width="2" /&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;rect x="11" y="31" width="26" height="5" rx="2.5" fill="currentColor" opacity="0.15" /&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;rect x="18" y="28" width="12" height="4" rx="2" fill="currentColor" opacity="0.25" /&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/svg&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="brand-text"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="brand-text-title"&gt;Ecografía Fácil&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="brand-text-sub"&gt;Información clara para tu cita de ecografía&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">     </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">   </span>&lt;!--IMAGEN DE CABECERA--&gt;</span></p>
-<p class="p2"><span class="s1">&lt;div class="hero-illustration"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;figure class="hero-illustration-figure"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">       </span>&lt;img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/330270b6b4041c5a021976d03ac4fb73f79030c8.jpg"alt="TAC moderno sobre fondo blanco" width="800" height="800" loading="lazy" /&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;figcaption class="hero-illustration-caption"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>Aspecto general de un equipo de ecografía.</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">     </span>&lt;/figcaption&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/figure&gt;</span></p>
-<p class="p2"><span class="s1">&lt;/div&gt;<span class="Apple-converted-space">   </span></span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space"> </span>&lt;/header&gt;<span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span></span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;h1 class="hero-title"&gt;Preparación básica para la realización de la ecografía.&lt;/h1&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p class="hero-lead"&gt;Selecciona el tipo de Ecografía que te han solicitado y despliega la información sobre indicaciones, preparación previa y procedimientos más importantes.&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span></span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;br&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>&lt;!--BOTONES DE ENLACES A OTRAS PAGINAS--&gt;</span></p>
-<p class="p2"><span class="s1">&lt;div class="botones-container"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>&lt;p class="hero-lead"&gt;Pulsa botón para más enlaces a otras webs de pruebas de Radilogía&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">   </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span></span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>&lt;button class="btn-link" onclick="window.location.href='https://nuclear-man.github.io/guia-tac/'"&gt;GUIA DE TAC&lt;/button&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>&lt;button class="btn-link" onclick="window.location.href='https://nuclear-man.github.io/Estudios-Medicina-Nuclear/'"&gt;GUIA MEDICINA NUCLEAR&lt;/button&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">     </span></span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>&lt;button class="btn-link" onclick="https://nuclear-man.github.io/guia-RM/"&gt;GUIA DE RESONANCIA&lt;/button&gt;<span class="Apple-converted-space"> </span></span></p>
-<p class="p2"><span class="s1">&lt;/div&gt;<span class="Apple-converted-space"> </span></span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">   </span>&lt;br&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span></span></p>
-<p class="p2"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;!--BLOQUE DE PRESENTACIÓN--&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;section class="intro" aria-label="Información general sobre la ecografia"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>&lt;p&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>Esta página es sólo informativa y no sustituye las indicaciones específicas de tu centro o de tu médico.</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>Si te han dado instrucciones diferentes, sigue siempre las de tu hospital o especialista.</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/p&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>&lt;p&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">       </span>Las ecografías son pruebas seguras, rápidas y no utilizan radiación ionizante. La mayoría no requieren preparación compleja, pero algunas sí precisan ayuno o mantener la vejiga llena.</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/p&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;!--BLOQUE DE CONSEJOS GENERALES--&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>&lt;aside class="aside-panel" aria-label="Consejos generales para el día de la Ecografía"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">   </span>&lt;h2&gt;Consejos generales para el día de la Ecografía&lt;/h2&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>&lt;ul class="aside-list"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;Llega unos minutos antes de la hora para cambiarte de ropa con tranquilidad y rellenar posibles formularios.&lt;/li&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;Lleva siempre tu tarjeta sanitaria, informe médico y analíticas o pruebas previas relacionadas.&lt;/li&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-converted-space">  <span class="Apple-tab-span">	</span></span>&lt;li&gt;Comenta al técnico si tienes alergias, prótesis, marcapasos u otras condiciones relevantes.&lt;/li&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;Si eres alérgico al yodo o ya has tenido reacción alérgica a contraste yodado, coméntalo antes de acudir o al llegar al servicio.&lt;/li&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;Si tienes dudas sobre la preparación (ayuno, medicación, agua a beber), contacta con tu centro antes de la cita.&lt;/li&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;Tras la prueba podrás hacer vida normal, salvo indicación específica de tu médico.&lt;/li&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/ul&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/aside&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">     </span>&lt;br&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
-<p class="p2"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;!--BLOQUE LISTADO DE PRUEBAS--&gt;</span></p>
-<p class="p1"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="exam-list" aria-label="Exploraciones de Ecografias disponibles"&gt;</span></p>
-<p class="p1"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;!--ECOGRAFIA ABDOMINAL--&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space"> </span>&lt;details class="exam"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;summary&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">       </span>&lt;div class="exam-summary-main"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">         </span>&lt;span class="exam-name"&gt;Ecografía Abdominal&lt;/span&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">         </span>&lt;span class="exam-area"&gt;Hígado · Vesícula · Páncreas · Riñones&lt;/span&gt;&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">       </span>&lt;div class="exam-icon" aria-hidden="true"&gt;&lt;span&gt;🫄&lt;/span&gt;&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">   </span>&lt;/summary&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span></span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">   <span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>&lt;div class="exam-content"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="exam-text-block"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div&gt;&lt;div class="pill-label"&gt;&lt;strong&gt;Indicaciones&lt;/strong&gt;&lt;/div&gt;&lt;p&gt;Dolor abdominal, molestias digestivas, sospecha de piedras en la vesícula o en los riñones, control de hígado graso, seguimiento de quistes o tumores abdominales y estudios inicial de muchas analíticas.&lt;/p&gt;&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span></span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div&gt;&lt;div class="pill-label"&gt;&lt;strong&gt;Preparación previa&lt;/strong&gt;&lt;/div&gt;&lt;p&gt;Habitualmente se pide acudir en ayunas de 6–8 horas (no comer ni beber, salvo pequeños sorbos de agua para medicación habitual). Evita bebidas gaseosas el día previo. Si eres diabético o estás embarcado en un tratamiento especial, consulta con tu médico antes de modificar la medicación o el desayuno.&lt;/p&gt;&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">             </span></span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div&gt;&lt;div class="pill-label"&gt;&lt;strong&gt;Procedimiento&lt;/strong&gt;&lt;/div&gt;&lt;p&gt;Estarás tumbado boca arriba sobre la camilla. El profesional aplicará gel sobre el abdomen y deslizará la sonda por distintas zonas mientras te pide que cojas aire y lo mantengas en algunas fases. La prueba suele durar entre 10 y 20 minutos. Suele durar pocos minutos.&lt;/p&gt;&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">             </span></span></p>
-<p class="p2"><span class="s1"><span class="Apple-tab-span">	</span>&lt;div class="contra"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">  <span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>&lt;div class="pill-label"&gt;&lt;strong&gt;Posibles contraindicaciones o limitaciones&lt;/strong&gt;&lt;/div&gt;&lt;p&gt; No suele tener contraindicaciones importantes. Puede ser más difícil de valorar si hay mucho gas intestinal, apósitos quirúrgicos recientes o dolor intenso a la palpación. Comenta siempre si estás embarazada, aunque esta exploración es segura en el embarazo.&lt;/p&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1">&lt;figure class="exam-image-card"&gt;&lt;img src="https://pplx-res.cloudinary.com/image/upload/t_thumbnail_512/pplx_search_images/4ce1d2d7787f9d7c832412f544936ee7614c31c1.jpg" alt="Equipo TAC craneal" width="512" height="288" loading="lazy" /&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space"> </span>&lt;figcaption class="exam-image-caption"&gt;En un TAC craneal la cabeza se coloca alineada y el estudio suele ser muy rápido.&lt;/figcaption&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/figure&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/details&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;!--ECOGRAFIA DE CUELLO--&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space"> </span>&lt;details class="exam"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">   </span>&lt;summary&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space"> </span>&lt;div class="exam-summary-main"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>&lt;span class="exam-name"&gt;Ecografía Urológica&lt;/span&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>&lt;span class="exam-area"&gt;RIÑONES · VEJIGA · PRÓSTATA (VISIÓN EXTERNA)&lt;/span&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space"> </span>&lt;/div&gt; <span class="Apple-converted-space"> </span></span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space"> </span>&lt;div class="exam-icon" aria-hidden="true"&gt;&lt;span&gt;💧&lt;/span&gt;&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">   </span>&lt;/summary&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span></span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space"> </span>&lt;div class="exam-content"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="exam-text-block"&gt; <span class="Apple-converted-space">         </span></span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div&gt;&lt;div class="pill-label"&gt;&lt;strong&gt;Indicaciones&lt;/strong&gt;&lt;/div&gt;&lt;p&gt;Estudio de infecciones urinarias de repetición, cólicos nefríticos, control de litiasis (piedras), valoración de tamaño renal, sospecha de obstrucción urinaria y control de patología prostática desde el abdomen.&lt;/p&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span></span></p>
-<p class="p2"><span class="s1">&lt;div&gt;&lt;div class="pill-label"&gt;&lt;strong&gt;Preparación previa&lt;/strong&gt;&lt;/div&gt;&lt;p&gt;Se suele solicitar beber 2-4 vasos de agua una hora antes de la cita y acudir sin orinar, para conseguir una vejiga moderadamente llena que permita una mejor visualización. Si tu médico te ha indicado otra pauta, prioriza siempre sus instrucciones.&lt;/p&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;<span class="Apple-converted-space">         </span></span></p>
-<p class="p1"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1">&lt;div&gt;&lt;div class="pill-label"&gt;&lt;strong&gt;Procedimiento&lt;/strong&gt;&lt;/div&gt;&lt;p&gt;La exploración se realiza con el paciente tumbado boca arriba o ligeramente de lado. Se aplicará gel sobre el abdomen y la zona lumbar mientras se revisan los riñones y la vejiga. Es posible que te pidan que orines antes del final para valorar el vaciado vesical.&lt;/p&gt;</span></p>
-<p class="p2"><span class="s1">&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">             </span></span></p>
-<p class="p2"><span class="s1">&lt;div class="contra"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space"> </span>&lt;div class="pill-label"&gt;&lt;strong&gt;Posibles contraindicaciones o limitaciones&lt;/strong&gt;&lt;/div&gt;&lt;p&gt; No suele tener contraindicaciones importantes. Puede ser más difícil de valorar si hay mucho gas intestinal, apósitos quirúrgicos recientes o dolor intenso a la palpación. Comenta siempre si estás embarazada, aunque esta exploración es segura en el embarazo.&lt;/p&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space"> </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1">&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1">&lt;figure class="exam-image-card"&gt;</span></p>
-<p class="p2"><span class="s1">&lt;img src="https://pplx-res.cloudinary.com/image/upload/t_thumbnail_512/pplx_search_images/4ce1d2d7787f9d7c832412f544936ee7614c31c1.jpg" alt="TAC de cabeza y cuello" width="512" height="288" loading="lazy" /&gt;</span></p>
-<p class="p2"><span class="s1">&lt;figcaption class="exam-image-caption"&gt;El TAC de cuello se realiza en posición tumbada, sin moverse durante la adquisición.&lt;/figcaption&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/figure&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space"> </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1">&lt;/details&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;!--ECOGRAFIA MAMARIA--&gt;</span></p>
-<p class="p2"><span class="s1">&lt;details class="exam"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space"> </span>&lt;summary&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="exam-summary-main"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">     </span>&lt;span class="exam-name"&gt;Ecografía de Mama&lt;/span&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">         </span>&lt;span class="exam-area"&gt;Tejido mamario y axilar&lt;/span&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="exam-icon" aria-hidden="true"&gt;&lt;span&gt;🎀&lt;/span&gt;&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space"> </span>&lt;/summary&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span></span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="exam-content"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="exam-text-block"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div&gt;&lt;div class="pill-label"&gt;&lt;strong&gt;Indicaciones&lt;/strong&gt;&lt;/div&gt;&lt;p&gt;Estudio de bultos o nódulos palpables, seguimiento de quistes, valoración complementaria a la mamografía, control en mujeres jóvenes con mamas densas y guía para algunas punciones o biopsias.&lt;/p&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span></span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div&gt;&lt;div class="pill-label"&gt;&lt;strong&gt;Preparación previa&lt;/strong&gt;&lt;/div&gt;&lt;p&gt;No suele requerir preparación especial. Es recomendable acudir con ropa cómoda que permita descubrir la zona torácica con facilidad y evitar cremas espesas sobre la piel del pecho el mismo día de la prueba.&lt;/p&gt;&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt; <span class="Apple-converted-space">     </span></span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div&gt;&lt;div class="pill-label"&gt;&lt;strong&gt;Procedimiento&lt;/strong&gt;&lt;/div&gt;&lt;p&gt;La exploración se realiza con la paciente tumbada boca arriba o ligeramente de lado, con el brazo del lado a estudiar elevado. Se aplica gel sobre la mama y se desliza la sonda con movimientos suaves, revisando también la axila. La duración aproximada es de 10–20 minutos.&lt;/p&gt;&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;<span class="Apple-converted-space">       </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span></span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="contra"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="pill-label"style="color: #b91c1c; font-weight: 600;"&gt;&lt;strong&gt;Contraindicaciones y precauciones&lt;/strong&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    <span class="Apple-tab-span">	</span></span>&lt;p&gt;No existen contraindicaciones relevantes. En presencia de cicatrices recientes, hematomas o dolor intenso, algunas zonas pueden ser más sensibles. Comunica siempre si estás en seguimiento por un especialista de mama.&lt;/p&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">  <span class="Apple-tab-span">	</span></span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span></span></p>
-<p class="p2"><span class="s1">&lt;figure class="exam-image-card"&gt;</span></p>
-<p class="p2"><span class="s1">&lt;img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/037d9120e1ed9215c110ec965a7f083c6c820397.jpg" alt="Paciente entrando en TAC" width="512" height="288" loading="lazy" /&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>&lt;figcaption class="exam-image-caption"&gt;En el TAC torácico es habitual que te pidan inspiración profunda y apnea breve.</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/figcaption&gt;</span></p>
-<p class="p2"><span class="s1">&lt;/figure&gt;</span></p>
-<p class="p2"><span class="s1">&lt;/details&gt;</span></p>
-<p class="p1"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">          <span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span> </span>&lt;!--ECOGRAFIA DOPPLER--&gt;</span></p>
-<p class="p2"><span class="s1">&lt;details class="exam"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">   </span>&lt;summary&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="exam-summary-main"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">         </span>&lt;span class="exam-name"&gt;Ecografía Doppler (venosa/arterial)&lt;/span&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">             </span>&lt;span class="exam-area"&gt;Piernas · brazos · carótidas u otras arterias&lt;/span&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">       </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="exam-icon" aria-hidden="true"&gt;&lt;span&gt;🩸&lt;/span&gt;&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">   </span>&lt;/summary&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space"> </span>&lt;div class="exam-content"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="exam-text-block"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">   </span>&lt;div&gt;&lt;div class="pill-label"&gt;&lt;strong&gt;Indicaciones&lt;/strong&gt;&lt;/div&gt;&lt;p&gt;Estudio de varices, sospecha de trombosis venosa profunda, valoración de la circulación arterial en piernas y brazos, control de placas en carótidas y seguimiento tras cirugías vasculares o colocación de stents.&lt;/p&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">   </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">             </span></span></p>
-<p class="p2"><span class="s1">&lt;div&gt;&lt;div class="pill-label"&gt;&lt;strong&gt;Preparación previa&lt;/strong&gt;&lt;/div&gt;&lt;p&gt;Generalmente no se requiere preparación específica. Es útil acudir con ropa amplia o pantalones fáciles de remangar para descubrir bien la zona a estudiar. Para exploraciones de carótidas se recomienda evitar collares o prendas muy ajustadas al cuello.&lt;/p&gt;&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1">&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space"> </span>&lt;div&gt;&lt;div class="pill-label"&gt;&lt;strong&gt;Procedimiento&lt;/strong&gt;&lt;/div&gt;&lt;p&gt;La prueba se realiza tumbado. El profesional aplicará gel sobre la zona y desplazará la sonda siguiendo el trayecto de venas o arterias, ejerciendo a veces una ligera presión. En ocasiones se escuchará el flujo sanguíneo mediante sonidos emitidos por el equipo Doppler. En Eco-Doppler Venoso de los miembros inferiores en ocasiones se requerirá realizarlo en pie.&lt;/p&gt;</span></p>
-<p class="p2"><span class="s1">&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span></span></p>
-<p class="p2"><span class="s1">&lt;div class="contra"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="pill-label" style="color: #b91c1c; font-weight: 600;"&gt;&lt;strong&gt;Contraindicaciones y precauciones&lt;/strong&gt;&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">  <span class="Apple-tab-span">	</span></span>&lt;p&gt;No suele tener contraindicaciones. Puede resultar algo molesta si hay heridas recientes, hematomas o dolor al comprimir la zona. En casos concretos (úlceras abiertas, infecciones extensas) la exploración puede adaptarse o posponerse según criterio médico.&lt;/p&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space"> </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">             </span></span></p>
-<p class="p2"><span class="s1">&lt;figure class="exam-image-card"&gt;</span></p>
-<p class="p2"><span class="s1">&lt;img src="https://pplx-res.cloudinary.com/image/upload/t_thumbnail_512/pplx_search_images/4ce1d2d7787f9d7c832412f544936ee7614c31c1.jpg" alt="Equipo TAC craneal" width="512" height="288" loading="lazy" /&gt;</span></p>
-<p class="p2"><span class="s1">&lt;figcaption class="exam-image-caption"&gt;TAC cardíaco.&lt;/figcaption&gt;</span></p>
-<p class="p2"><span class="s1">&lt;/figure&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space"> </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1">&lt;/details&gt;</span></p>
-<p class="p1"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;!--ECOGRAFIA MUSCULAR/ PARTES BALNDAS--&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space"> </span>&lt;details class="exam"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;summary&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">       </span>&lt;div class="exam-summary-main"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>&lt;span class="exam-name"&gt;Ecografía Muscular / Partes Blandas&lt;/span&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">             </span>&lt;span class="exam-area"&gt;Hombro · rodilla · musculatura y tendones&lt;/span&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">       </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">       </span>&lt;div class="exam-icon" aria-hidden="true"&gt;&lt;span&gt;💪🏼&lt;/span&gt;&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">   </span>&lt;/summary&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span></span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">   </span>&lt;div class="exam-content"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">   </span>&lt;div class="exam-text-block"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span></span></p>
-<p class="p2"><span class="s1">&lt;div&gt;&lt;div class="pill-label"&gt;&lt;strong&gt;Indicaciones&lt;/strong&gt;&lt;/div&gt;&lt;p&gt;Dolor abdominal, apendicitis, diverticulitis, litiasis, estudio de tumores, traumatismos, hemorragias internas o control postoperatorio.&lt;/p&gt;</span></p>
-<p class="p2"><span class="s1">&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span></span></p>
-<p class="p2"><span class="s1">&lt;div&gt;&lt;div class="pill-label"&gt;&lt;strong&gt;Preparación previa&lt;/strong&gt;&lt;/div&gt;&lt;p&gt;Dolor o lesiones en hombro, codo, muñeca, cadera, rodilla o tobillo; sospecha de rotura muscular o tendinosa, derrames articulares, bursitis y estudio de bultos subcutáneos (quistes, lipomas, etc.).&lt;/p&gt;</span></p>
-<p class="p2"><span class="s1">&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span></span></p>
-<p class="p2"><span class="s1">&lt;div&gt;&lt;div class="pill-label"&gt;&lt;strong&gt;Preparación previa&lt;/strong&gt;&lt;/div&gt;&lt;p&gt;No suele requerir preparación especial. Se recomienda llevar ropa que permita descubrir fácilmente la articulación o zona a estudiar (por ejemplo, tirantes para el hombro o pantalón corto para la rodilla).&lt;/p&gt;</span></p>
-<p class="p2"><span class="s1">&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1">&lt;div&gt;&lt;div class="pill-label"&gt;&lt;strong&gt;Procedimiento&lt;/strong&gt;&lt;/div&gt;&lt;p&gt;En función de la zona, estarás tumbado o sentado. Se aplica gel sobre la piel y se mueve la sonda mientras se te pide que realices pequeños movimientos con la articulación para valorar músculos y tendones en reposo y en actividad.&lt;/p&gt;</span></p>
-<p class="p2"><span class="s1">&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span></span></p>
-<p class="p2"><span class="s1">&lt;div class="contra"&gt;&lt;div class="pill-label"style="color: #b91c1c; font-weight: 600;"&gt;&lt;strong&gt;Contraindicaciones y precauciones&lt;/strong&gt;&lt;/div&gt;&lt;p&gt;En general es una exploración muy segura. Puede resultar dolorosa si existe una lesión aguda. La presencia de escayolas, férulas o vendajes rígidos puede limitar el campo de visión. Si llevas heridas abiertas o suturas recientes, coméntalo antes de iniciar la prueba.&lt;/p&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1">&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1">&lt;figure class="exam-image-card"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space"> </span>&lt;img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/86aa2dac603646aca80d1032353efbf4cb2fc423.jpg" alt="Paciente durante TAC abdominal" width="512" height="341" loading="lazy" /&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space"> </span>&lt;figcaption class="exam-image-caption"&gt;En el TAC abdominal y pélvico la mesa avanza suavemente por el aro mientras se obtienen las imágenes.&lt;/figcaption&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/figure&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1">&lt;/details&gt;</span></p>
-<p class="p1"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;!--ECOGRAFIA PELVICA--&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space"> </span>&lt;details class="exam"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;summary&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="exam-summary-main"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">         </span>&lt;span class="exam-name"&gt;Ecografía Pélvica&lt;/span&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">         </span>&lt;span class="exam-area"&gt;Útero · ovarios · pelvis femenina (vía abdominal)&lt;/span&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="exam-icon" aria-hidden="true"&gt;&lt;span&gt;🎗️&lt;/span&gt;&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/summary&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">   </span></span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="exam-content"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="exam-text-block"&gt;</span></p>
-<p class="p2"><span class="s1">&lt;div&gt;&lt;div class="pill-label"&gt;&lt;strong&gt;Indicaciones&lt;/strong&gt;&lt;/div&gt;&lt;p&gt;Estudio de dolor pélvico, reglas abundantes o irregulares, sospecha de miomas o quistes ováricos, control de patología uterina y seguimiento de hallazgos en revisiones ginecológicas previas. Esta ficha se refiere exclusivamente a la ecografía pélvica realizada desde el abdomen (no incluye la exploración transvaginal).&lt;/p&gt;</span></p>
-<p class="p2"><span class="s1">&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">             </span></span></p>
-<p class="p2"><span class="s1">&lt;div&gt;&lt;div class="pill-label"&gt;&lt;strong&gt;Preparación previa&lt;/strong&gt;&lt;/div&gt;&lt;p&gt;Habitualmente se solicita acudir con la vejiga moderadamente llena, bebiendo agua antes de la prueba y evitando orinar justo antes de entrar. Una vejiga llena actúa como "ventana" y facilita la visualización del útero y los ovarios desde el abdomen.&lt;/p&gt;</span></p>
-<p class="p2"><span class="s1">&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span></span></p>
-<p class="p2"><span class="s1">&lt;div&gt;&lt;div class="pill-label"&gt;&lt;strong&gt;Procedimiento&lt;/strong&gt;&lt;/div&gt;&lt;p&gt;Estarás tumbada boca arriba. Se aplicará gel sobre la parte baja del abdomen y se desplazará la sonda sobre el vientre para estudiar útero, ovarios y el resto de la pelvis. No se introduce ningún aparato en la vagina en este tipo de ecografía.&lt;/p&gt;</span></p>
-<p class="p2"><span class="s1">&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span></span></p>
-<p class="p2"><span class="s1">&lt;div class="contra"&gt;&lt;div class="pill-label"style="color: #b91c1c; font-weight: 600;"&gt;&lt;strong&gt;Contraindicaciones y precauciones&lt;/strong&gt;&lt;/div&gt;&lt;p&gt;No suele tener contraindicaciones relevantes. En pacientes con dificultad para mantener la vejiga llena o con cicatrices quirúrgicas recientes, la exploración puede ser algo más limitada. Si tu especialista considera necesaria una ecografía transvaginal, te explicará específicamente en qué consiste y se realizará en condiciones de intimidad y consentimiento informado.&lt;/p&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space"> </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">           </span></span></p>
-<p class="p2"><span class="s1">&lt;figure class="exam-image-card"&gt;</span></p>
-<p class="p2"><span class="s1">&lt;img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/4096d54e3c9b7b418aa822658e5ca06d0559951f.jpg" alt="Paciente durante angio TAC" width="512" height="341" loading="lazy" /&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space"> </span>&lt;figcaption class="exam-image-caption"&gt;En el angio-TAC el contraste circula por la sangre para ver arterias y venas con mayor detalle.&lt;/figcaption&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space"> </span>&lt;/figure&gt;</span></p>
-<p class="p2"><span class="s1">&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1">&lt;/details&gt;</span></p>
-<p class="p1"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;!--ECOGRAFÍA VESICAL--&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;details class="exam"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>&lt;summary&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="exam-summary-main"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">              </span>&lt;span class="exam-name"&gt;Ecografía Vesical&lt;/span&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">              </span>&lt;span class="exam-area"&gt;Vejiga urinaria&lt;/span&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="exam-icon" aria-hidden="true"&gt;&lt;span&gt;💧&lt;/span&gt;&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/summary&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span></span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space"> </span>&lt;div class="exam-content"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="exam-text-block"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span></span></p>
-<p class="p2"><span class="s1">&lt;div&gt;&lt;div class="pill-label"&gt;&lt;strong&gt;Indicaciones&lt;/strong&gt;&lt;/div&gt;&lt;p&gt;Valoración del volumen de orina residual tras la micción, estudio de infecciones urinarias, sospecha de pólipos o tumores vesicales, y seguimiento en pacientes con sondaje o problemas de vaciado.&lt;/p&gt;&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span></span></p>
-<p class="p2"><span class="s1">&lt;div&gt;&lt;div class="pill-label"&gt;&lt;strong&gt;Preparación previa&lt;/strong&gt;&lt;/div&gt;&lt;p&gt;Se recomienda beber agua antes de la prueba para acudir con ganas moderadas de orinar. No vacíes la vejiga justo antes de entrar, salvo que el equipo te indique lo contrario.&lt;/p&gt;&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1">&lt;div&gt;&lt;div class="pill-label"&gt;&lt;strong&gt;Procedimiento&lt;/strong&gt;&lt;/div&gt;&lt;p&gt;Tumbado boca arriba, se aplica gel sobre la parte baja del abdomen (por encima del pubis) y se estudia la vejiga llena. En algunos casos se repetirá la medida tras orinar para valorar cuánto líquido queda dentro.&lt;/p&gt;&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span></span></p>
-<p class="p2"><span class="s1">&lt;div class="contra"&gt;&lt;div class="pill-label"style="color: #b91c1c; font-weight: 600;"&gt;&lt;strong&gt;Contraindicaciones y precauciones&lt;/strong&gt;&lt;/div&gt;&lt;p&gt;No existen contraindicaciones significativas. Si tienes mucha urgencia miccional o dolor, avisa al técnico para adaptar el procedimiento. En presencia de heridas o cicatrices recientes sobre el pubis la exploración puede ser algo más incómoda.&lt;/p&gt;&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space"> </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p2"><span class="s1">&lt;figure class="exam-image-card"&gt;</span></p>
-<p class="p2"><span class="s1">&lt;img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/037d9120e1ed9215c110ec965a7f083c6c820397.jpg" alt="Paciente preparado para un TAC" width="512" height="288" loading="lazy" /&gt;&lt;figcaption class="exam-image-caption"&gt;El TAC musculoesquelético se usa mucho para huesos, articulaciones y planificación de cirugía traumatológica.&lt;/figcaption&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space"> </span>&lt;/figure&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space"> </span>&lt;/details&gt;</span></p>
-<p class="p1"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;!--ECOGRAFIA TESTICULAR--&gt;</span></p>
-<p class="p1"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1">&lt;details class="exam"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">     </span>&lt;summary&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="exam-summary-main"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>&lt;span class="exam-name"&gt;Ecografía Testicular&lt;/span&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>&lt;span class="exam-area"&gt;Testículos y estructuras cercanas&lt;/span&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">           </span>&lt;div class="exam-icon" aria-hidden="true"&gt;&lt;span&gt;👨🏽&lt;/span&gt;&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/summary&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span></span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space"> </span>&lt;div class="exam-content"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="exam-text-block"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span></span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div&gt;&lt;div class="pill-label"&gt;&lt;strong&gt;Indicaciones&lt;/strong&gt;&lt;/div&gt;&lt;p&gt;Dolor o aumento de tamaño testicular, bultos palpables, traumatismos en la zona, estudio de varicocele, control de tumores o quistes y valoración de infertilidad masculina.&lt;/p&gt;&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span></span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div&gt;&lt;div class="pill-label"&gt;&lt;strong&gt;Preparación previa&lt;/strong&gt;&lt;/div&gt;&lt;p&gt;Se recomienda beber agua antes de la prueba para acudir con ganas moderadas de orinar. No vacíes la vejiga justo antes de entrar, salvo que el equipo te indique lo contrario.&lt;/p&gt;&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div&gt;&lt;div class="pill-label"&gt;&lt;strong&gt;Procedimiento&lt;/strong&gt;&lt;/div&gt;&lt;p&gt;Generalmente estarás tumbado boca arriba. Se aplicará gel sobre el escroto y se apoyará la sonda con suavidad para estudiar cada testículo. A veces se comprueba la circulación con Doppler. La exploración suele ser rápida y, aunque pueda resultar algo incómoda, no debería ser dolorosa.&lt;/p&gt;&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span></span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="contra"&gt;&lt;div class="pill-label"style="color: #b91c1c; font-weight: 600;"&gt;&lt;strong&gt;Contraindicaciones y precauciones&lt;/strong&gt;&lt;/div&gt;&lt;p&gt;No se conocen contraindicaciones importantes. Si presentas dolor intenso, inflamación marcada, infecciones de piel o heridas recientes, coméntalo antes de comenzar para adaptar la exploración..&lt;/p&gt;&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p2"><span class="s1">&lt;figure class="exam-image-card"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">              </span>&lt;img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/037d9120e1ed9215c110ec965a7f083c6c820397.jpg" alt="Paciente preparado para un TAC" width="512" height="288" loading="lazy" /&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">              </span>&lt;figcaption class="exam-image-caption"&gt;El TAC musculoesquelético se usa mucho para huesos, articulaciones y planificación de cirugía traumatológica.&lt;/figcaption&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/figure&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/details&gt;</span></p>
-<p class="p1"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;!--ECOGRAFIA TIROIDEA CERVICAL--&gt;</span></p>
-<p class="p1"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1">&lt;details class="exam"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>&lt;summary&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">     </span>&lt;div class="exam-summary-main"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">       </span>&lt;span class="exam-name"&gt;Ecografía Tiroidea / Cervical&lt;/span&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">       </span>&lt;span class="exam-area"&gt;Tiroides · ganglios del cuello · glándulas salivales&lt;/span&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">     </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">     </span>&lt;div class="exam-icon" aria-hidden="true"&gt;&lt;span&gt;🩻&lt;/span&gt;&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/summary&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span></span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space"> </span>&lt;div class="exam-content"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="exam-text-block"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div&gt;&lt;div class="pill-label"&gt;&lt;strong&gt;Indicaciones&lt;/strong&gt;&lt;/div&gt;&lt;p&gt;Estudio de nódulos tiroideos, aumento de tamaño de la glándula, alteraciones hormonales tiroideas, control de bocio y valoración de ganglios en el cuello.&lt;/p&gt;&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span></span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div&gt;&lt;div class="pill-label"&gt;&lt;strong&gt;Preparación previa&lt;/strong&gt;&lt;/div&gt;&lt;p&gt;No requiere ayuno ni preparación específica. Se recomienda acudir sin collares o prendas muy ajustadas al cuello para facilitar el acceso a la zona.&lt;/p&gt;&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div&gt;&lt;div class="pill-label"&gt;&lt;strong&gt;Procedimiento&lt;/strong&gt;&lt;/div&gt;&lt;p&gt;Te tumbarás boca arriba con el cuello ligeramente extendido, apoyando la cabeza en una pequeña almohada. Se aplicará gel sobre la parte anterior del cuello y se deslizará la sonda para revisar tiroides y ganglios. Es una exploración corta y bien tolerada.&lt;/p&gt;&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span></span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="contra"&gt;&lt;div class="pill-label"style="color: #b91c1c; font-weight: 600;"&gt;&lt;strong&gt;Contraindicaciones y precauciones&lt;/strong&gt;&lt;/div&gt;&lt;p&gt;No existen contraindicaciones relevantes. En pacientes con cicatrices recientes en el cuello, problemas respiratorios al extenderlo o dolor intenso en la zona, la posición puede adaptarse para mayor comodidad.&lt;/p&gt;&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space"> </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p2"><span class="s1">&lt;figure class="exam-image-card"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">   </span>&lt;img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/037d9120e1ed9215c110ec965a7f083c6c820397.jpg" alt="Paciente preparado para un TAC" width="512" height="288" loading="lazy" /&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">   </span>&lt;figcaption class="exam-image-caption"&gt;El TAC musculoesquelético se usa mucho para huesos, articulaciones y planificación de cirugía traumatológica.&lt;/figcaption&gt;</span></p>
-<p class="p2"><span class="s1">&lt;/figure&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">   </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1">&lt;/details&gt;</span></p>
-<p class="p1"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;!--ECOGRAFIA CARDIACA--&gt;</span></p>
-<p class="p1"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1">&lt;details class="exam"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">   </span>&lt;summary&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="exam-summary-main"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">       </span>&lt;span class="exam-name"&gt;Ecografía Cardíaca&lt;/span&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">       </span>&lt;span class="exam-area"&gt;Corazón · Válvulas&lt;/span&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">         </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="exam-icon" aria-hidden="true"&gt;&lt;span&gt;🫀&lt;/span&gt;&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/summary&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">         </span></span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space"> </span>&lt;div class="exam-content"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="exam-text-block"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span></span></p>
-<p class="p2"><span class="s1">&lt;div&gt;&lt;div class="pill-label"&gt;&lt;strong&gt;Indicaciones&lt;/strong&gt;&lt;/div&gt;&lt;p&gt;Insuficiencias cardíacas, defectos en las válvulas y otras anomalías estructurales. También permite medir la función cardíaca.&lt;/p&gt;&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span></span></p>
-<p class="p2"><span class="s1">&lt;div&gt;&lt;div class="pill-label"&gt;&lt;strong&gt;Preparación previa&lt;/strong&gt;&lt;/div&gt;&lt;p&gt;No requiere en general de preparación especial previa, pero se recomienda evitar comidas abundantes antes de la prueba.&lt;/p&gt;&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1">&lt;div&gt;&lt;div class="pill-label"&gt;&lt;strong&gt;Procedimiento&lt;/strong&gt;&lt;/div&gt;&lt;p&gt;Se acostará en la camilla generalmente, en posición lateral izquierda y, se aplicará un gel para facilitar el estudio.y deslizará la sonda por distintas zonas mientras te pide que cojas aire y lo mantengas en algunas fases. La prueba suele durar entre 10 y 20 minutos.&lt;/p&gt;&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span></span></p>
-<p class="p2"><span class="s1">&lt;div class="contra"&gt;&lt;div class="pill-label"style="color: #b91c1c; font-weight: 600;"&gt;&lt;strong&gt;Contraindicaciones y precauciones&lt;/strong&gt;&lt;/div&gt;&lt;p&gt;No suele tener contraindicaciones importantes. Puede ser más difícil de valorar si hay mucho gas intestinal, apósitos quirúrgicos recientes o dolor intenso a la palpación. Comenta siempre si estás embarazada, aunque esta exploración es segura en el embarazo.&lt;/p&gt;&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1">&lt;/div&gt;<span class="Apple-converted-space">           </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p2"><span class="s1">&lt;figure class="exam-image-card"&gt;</span></p>
-<p class="p2"><span class="s1">&lt;img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/037d9120e1ed9215c110ec965a7f083c6c820397.jpg" alt="Paciente preparado para un TAC" width="512" height="288" loading="lazy" /&gt;</span></p>
-<p class="p2"><span class="s1">&lt;figcaption class="exam-image-caption"&gt;El TAC musculoesquelético se usa mucho para huesos, articulaciones y planificación de cirugía traumatológica.&lt;/figcaption&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/figure&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/details&gt;</span></p>
-<p class="p1"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;footer class="page-footer"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>&lt;p&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>Esta guía está pensada para ayudar a los pacientes a entender mejor en qué consiste cada tipo de Ecografía.</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>No sustituye la valoración ni las indicaciones individualizadas de tu médico o centro de referencia.</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/p&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">   </span>&lt;p&gt;</span></p>
-<p class="p2"><span class="s1">&lt;footer style="background: #333; color: white; padding: 15px; text-align: center; font-size: 14px;"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>&lt;p style="margin: 0;"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>© 2026 &lt;strong&gt;Enrique Molina&lt;/strong&gt; | Técnico de Medicina Nuclear |<span class="Apple-converted-space"> </span></span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;a href="https://www.youtube.com/@enmoga1973" style="color: #4CAF50; text-decoration: none;"&gt;Canal de YouTube&lt;/a&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/p&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">   </span>&lt;p style="margin: 5px 0 0 0; font-size: 12px; color: #bdc3c7;"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>Todos los derechos reservados | &lt;a href="/aviso-legal" style="color: #bdc3c7;"&gt;Aviso Legal&lt;/a&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/p&gt; <span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span></span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/footer&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/main&gt;</span></p>
-<p class="p2"><span class="s1">&lt;/body&gt;</span></p>
-<p class="p2"><span class="s1">&lt;/html&gt;</span></p>
+  <main class="page">
+    <header class="page-header">
+      <div class="brand" aria-label="Ecografía fácil: guía para pacientes">
+        <div class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48" role="img" aria-label="Icono de TAC minimalista">
+            <circle cx="24" cy="20" r="11" fill="none" stroke="currentColor" stroke-width="2" />
+            <circle cx="24" cy="20" r="4" fill="none" stroke="currentColor" stroke-width="2" />
+            <rect x="11" y="31" width="26" height="5" rx="2.5" fill="currentColor" opacity="0.15" />
+            <rect x="18" y="28" width="12" height="4" rx="2" fill="currentColor" opacity="0.25" />
+          </svg>
+        </div>
+        
+        
+        <div class="brand-text">
+          <div class="brand-text-title">Ecografía Fácil</div>
+          <div class="brand-text-sub">Información clara para tu cita de ecografía</div>
+        </div>
+     </div>
+
+   <!--IMAGEN DE CABECERA-->
+<div class="hero-illustration">
+    <figure class="hero-illustration-figure">
+       <img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/330270b6b4041c5a021976d03ac4fb73f79030c8.jpg"alt="TAC moderno sobre fondo blanco" width="800" height="800" loading="lazy" />
+    <figcaption class="hero-illustration-caption">
+      Aspecto general de un equipo de ecografía.
+     </figcaption>
+    </figure>
+</div>   
+ </header> 
+    
+ 
+        <h1 class="hero-title">Preparación básica para la realización de la ecografía.</h1>
+        <p class="hero-lead">Selecciona el tipo de Ecografía que te han solicitado y despliega la información sobre indicaciones, preparación previa y procedimientos más importantes.</p>
+     
+    <br>
+    
+      <!--BOTONES DE ENLACES A OTRAS PAGINAS-->
+<div class="botones-container">
+  <p class="hero-lead">Pulsa botón para más enlaces a otras webs de pruebas de Radilogía</p>
+   
+  
+  <button class="btn-link" onclick="window.location.href='https://nuclear-man.github.io/guia-tac/'">GUIA DE TAC</button>
+    
+  <button class="btn-link" onclick="window.location.href='https://nuclear-man.github.io/Estudios-Medicina-Nuclear/'">GUIA MEDICINA NUCLEAR</button>
+     
+  <button class="btn-link" onclick="https://nuclear-man.github.io/guia-RM/">GUIA DE RESONANCIA</button> 
+</div> 
+   <br>
+      
+  
+				<!--BLOQUE DE PRESENTACIÓN-->
+    <section class="intro" aria-label="Información general sobre la ecografia">
+      <p>
+        Esta página es sólo informativa y no sustituye las indicaciones específicas de tu centro o de tu médico.
+        Si te han dado instrucciones diferentes, sigue siempre las de tu hospital o especialista.
+      </p>
+      <p>
+       Las ecografías son pruebas seguras, rápidas y no utilizan radiación ionizante. La mayoría no requieren preparación compleja, pero algunas sí precisan ayuno o mantener la vejiga llena.
+      </p>
+    </section>
+					
+    <!--BLOQUE DE CONSEJOS GENERALES-->
+      <aside class="aside-panel" aria-label="Consejos generales para el día de la Ecografía">
+   <h2>Consejos generales para el día de la Ecografía</h2>
+      <ul class="aside-list">
+        <li>Llega unos minutos antes de la hora para cambiarte de ropa con tranquilidad y rellenar posibles formularios.</li>
+        <li>Lleva siempre tu tarjeta sanitaria, informe médico y analíticas o pruebas previas relacionadas.</li>
+	  	<li>Comenta al técnico si tienes alergias, prótesis, marcapasos u otras condiciones relevantes.</li>
+        <li>Si eres alérgico al yodo o ya has tenido reacción alérgica a contraste yodado, coméntalo antes de acudir o al llegar al servicio.</li>
+        <li>Si tienes dudas sobre la preparación (ayuno, medicación, agua a beber), contacta con tu centro antes de la cita.</li>
+        <li>Tras la prueba podrás hacer vida normal, salvo indicación específica de tu médico.</li>
+        </ul>
+      </aside>
+     <br>
+    
+				<!--BLOQUE LISTADO DE PRUEBAS-->
+      <div class="exam-list" aria-label="Exploraciones de Ecografias disponibles">
+
+				<!--ECOGRAFIA ABDOMINAL-->
+ <details class="exam">
+    <summary>
+       <div class="exam-summary-main">
+         <span class="exam-name">Ecografía Abdominal</span>
+         <span class="exam-area">Hígado · Vesícula · Páncreas · Riñones</span></div>
+       <div class="exam-icon" aria-hidden="true"><span>🫄</span></div>
+   </summary>
+          
+   		<div class="exam-content">
+        <div class="exam-text-block">
+        <div><div class="pill-label"><strong>Indicaciones</strong></div><p>Dolor abdominal, molestias digestivas, sospecha de piedras en la vesícula o en los riñones, control de hígado graso, seguimiento de quistes o tumores abdominales y estudios inicial de muchas analíticas.</p></div>
+              
+        <div><div class="pill-label"><strong>Preparación previa</strong></div><p>Habitualmente se pide acudir en ayunas de 6–8 horas (no comer ni beber, salvo pequeños sorbos de agua para medicación habitual). Evita bebidas gaseosas el día previo. Si eres diabético o estás embarcado en un tratamiento especial, consulta con tu médico antes de modificar la medicación o el desayuno.</p></div>
+             
+        <div><div class="pill-label"><strong>Procedimiento</strong></div><p>Estarás tumbado boca arriba sobre la camilla. El profesional aplicará gel sobre el abdomen y deslizará la sonda por distintas zonas mientras te pide que cojas aire y lo mantengas en algunas fases. La prueba suele durar entre 10 y 20 minutos. Suele durar pocos minutos.</p></div>
+             
+	<div class="contra">
+  		<div class="pill-label"><strong>Posibles contraindicaciones o limitaciones</strong></div><p> No suele tener contraindicaciones importantes. Puede ser más difícil de valorar si hay mucho gas intestinal, apósitos quirúrgicos recientes o dolor intenso a la palpación. Comenta siempre si estás embarazada, aunque esta exploración es segura en el embarazo.</p>
+        </div>
+          </div>
+<figure class="exam-image-card"><img src="imagenes/ecoabdomen.png" alt="Equipo ecografia" width="512" height="288" loading="lazy" />
+ <figcaption class="exam-image-caption">En un TAC craneal la cabeza se coloca alineada y el estudio suele ser muy rápido.</figcaption>
+            </figure>
+          </div>
+        </details>
+					
+        
+        <!--ECOGRAFIA UROLOGICA-->
+ <details class="exam">
+   <summary>
+ <div class="exam-summary-main">
+      <span class="exam-name">Ecografía Urológica</span>
+      <span class="exam-area">RIÑONES · VEJIGA · PRÓSTATA (VISIÓN EXTERNA)</span>
+ </div>  
+ <div class="exam-icon" aria-hidden="true"><span>💧</span></div>
+   </summary>
+          
+ <div class="exam-content">
+  <div class="exam-text-block">          
+    <div><div class="pill-label"><strong>Indicaciones</strong></div><p>Estudio de infecciones urinarias de repetición, cólicos nefríticos, control de litiasis (piedras), valoración de tamaño renal, sospecha de obstrucción urinaria y control de patología prostática desde el abdomen.</p>
+    </div>
+ 
+<div><div class="pill-label"><strong>Preparación previa</strong></div><p>Se suele solicitar beber 2-4 vasos de agua una hora antes de la cita y acudir sin orinar, para conseguir una vejiga moderadamente llena que permita una mejor visualización. Si tu médico te ha indicado otra pauta, prioriza siempre sus instrucciones.</p>
+    </div>         
+
+<div><div class="pill-label"><strong>Procedimiento</strong></div><p>La exploración se realiza con el paciente tumbado boca arriba o ligeramente de lado. Se aplicará gel sobre el abdomen y la zona lumbar mientras se revisan los riñones y la vejiga. Es posible que te pidan que orines antes del final para valorar el vaciado vesical.</p>
+</div>
+             
+<div class="contra">
+ <div class="pill-label"><strong>Posibles contraindicaciones o limitaciones</strong></div><p> No suele tener contraindicaciones importantes. Puede ser más difícil de valorar si hay mucho gas intestinal, apósitos quirúrgicos recientes o dolor intenso a la palpación. Comenta siempre si estás embarazada, aunque esta exploración es segura en el embarazo.</p>
+ </div>
+</div>
+
+<figure class="exam-image-card">
+<img src="imagenes/ecouro.png" alt="TAC de cabeza y cuello" width="512" height="288" loading="lazy" />
+<figcaption class="exam-image-caption">El TAC de cuello se realiza en posición tumbada, sin moverse durante la adquisición.</figcaption>
+            </figure>
+ </div>
+</details>
+				
+        <!--ECOGRAFIA MAMARIA-->
+<details class="exam">
+ <summary>
+  <div class="exam-summary-main">
+     <span class="exam-name">Ecografía de Mama</span>
+         <span class="exam-area">Tejido mamario y axilar</span>
+            </div>
+  <div class="exam-icon" aria-hidden="true"><span>🎀</span></div>
+ </summary>
+  
+  <div class="exam-content">
+    <div class="exam-text-block">
+      <div><div class="pill-label"><strong>Indicaciones</strong></div><p>Estudio de bultos o nódulos palpables, seguimiento de quistes, valoración complementaria a la mamografía, control en mujeres jóvenes con mamas densas y guía para algunas punciones o biopsias.</p>
+      </div>
+              
+      <div><div class="pill-label"><strong>Preparación previa</strong></div><p>No suele requerir preparación especial. Es recomendable acudir con ropa cómoda que permita descubrir la zona torácica con facilidad y evitar cremas espesas sobre la piel del pecho el mismo día de la prueba.</p></div>
+    </div>      
+      <div><div class="pill-label"><strong>Procedimiento</strong></div><p>La exploración se realiza con la paciente tumbada boca arriba o ligeramente de lado, con el brazo del lado a estudiar elevado. Se aplica gel sobre la mama y se desliza la sonda con movimientos suaves, revisando también la axila. La duración aproximada es de 10–20 minutos.</p></div>
+    </div>       
+      
+  <div class="contra">
+    <div class="pill-label"style="color: #b91c1c; font-weight: 600;"><strong>Contraindicaciones y precauciones</strong>
+    </div>
+    	<p>No existen contraindicaciones relevantes. En presencia de cicatrices recientes, hematomas o dolor intenso, algunas zonas pueden ser más sensibles. Comunica siempre si estás en seguimiento por un especialista de mama.</p>
+  	</div>
+ 
+<figure class="exam-image-card">
+<img src="imagenes/ecomama.jpg" alt="Paciente realizandose ecografia de mama" width="512" height="288" loading="lazy" />
+  <figcaption class="exam-image-caption">En el TAC torácico es habitual que te pidan inspiración profunda y apnea breve.
+  </figcaption>
+</figure>
+</details>
+
+          				 <!--ECOGRAFIA DOPPLER-->
+<details class="exam">
+   <summary>
+      <div class="exam-summary-main">
+         <span class="exam-name">Ecografía Doppler (venosa/arterial)</span>
+             <span class="exam-area">Piernas · brazos · carótidas u otras arterias</span>
+       </div>
+      <div class="exam-icon" aria-hidden="true"><span>🩸</span></div>
+   </summary>
+ <div class="exam-content">
+  <div class="exam-text-block">
+   <div><div class="pill-label"><strong>Indicaciones</strong></div><p>Estudio de varices, sospecha de trombosis venosa profunda, valoración de la circulación arterial en piernas y brazos, control de placas en carótidas y seguimiento tras cirugías vasculares o colocación de stents.</p>
+   </div>
+             
+<div><div class="pill-label"><strong>Preparación previa</strong></div><p>Generalmente no se requiere preparación específica. Es útil acudir con ropa amplia o pantalones fáciles de remangar para descubrir bien la zona a estudiar. Para exploraciones de carótidas se recomienda evitar collares o prendas muy ajustadas al cuello.</p></div>
+</div>
+        
+ <div><div class="pill-label"><strong>Procedimiento</strong></div><p>La prueba se realiza tumbado. El profesional aplicará gel sobre la zona y desplazará la sonda siguiendo el trayecto de venas o arterias, ejerciendo a veces una ligera presión. En ocasiones se escuchará el flujo sanguíneo mediante sonidos emitidos por el equipo Doppler. En Eco-Doppler Venoso de los miembros inferiores en ocasiones se requerirá realizarlo en pie.</p>
+</div>
+              
+<div class="contra">
+  <div class="pill-label" style="color: #b91c1c; font-weight: 600;"><strong>Contraindicaciones y precauciones</strong></div>
+  	<p>No suele tener contraindicaciones. Puede resultar algo molesta si hay heridas recientes, hematomas o dolor al comprimir la zona. En casos concretos (úlceras abiertas, infecciones extensas) la exploración puede adaptarse o posponerse según criterio médico.</p>
+ </div>
+             
+<figure class="exam-image-card">
+<img src="imagnenes/ecodoppler.jpg" alt="Equipo TAC craneal" width="512" height="288" loading="lazy" />
+<figcaption class="exam-image-caption">Eco-Doppler de Miembros Inferiores.</figcaption>
+</figure>
+ </div>
+</details>
+
+				<!--ECOGRAFIA MUSCULAR/ PARTES BALNDAS-->
+ <details class="exam">
+    <summary>
+       <div class="exam-summary-main">
+          <span class="exam-name">Ecografía Muscular / Partes Blandas</span>
+             <span class="exam-area">Hombro · rodilla · musculatura y tendones</span>
+       </div>
+       <div class="exam-icon" aria-hidden="true"><span>💪🏼</span></div>
+   </summary>
+          
+   <div class="exam-content">
+   <div class="exam-text-block">
+              
+<div><div class="pill-label"><strong>Indicaciones</strong></div><p>Dolor abdominal, apendicitis, diverticulitis, litiasis, estudio de tumores, traumatismos, hemorragias internas o control postoperatorio.</p>
+</div>
+              
+<div><div class="pill-label"><strong>Preparación previa</strong></div><p>Dolor o lesiones en hombro, codo, muñeca, cadera, rodilla o tobillo; sospecha de rotura muscular o tendinosa, derrames articulares, bursitis y estudio de bultos subcutáneos (quistes, lipomas, etc.).</p>
+</div>
+              
+<div><div class="pill-label"><strong>Preparación previa</strong></div><p>No suele requerir preparación especial. Se recomienda llevar ropa que permita descubrir fácilmente la articulación o zona a estudiar (por ejemplo, tirantes para el hombro o pantalón corto para la rodilla).</p>
+</div>
+
+<div><div class="pill-label"><strong>Procedimiento</strong></div><p>En función de la zona, estarás tumbado o sentado. Se aplica gel sobre la piel y se mueve la sonda mientras se te pide que realices pequeños movimientos con la articulación para valorar músculos y tendones en reposo y en actividad.</p>
+</div>
+              
+<div class="contra"><div class="pill-label"style="color: #b91c1c; font-weight: 600;"><strong>Contraindicaciones y precauciones</strong></div><p>En general es una exploración muy segura. Puede resultar dolorosa si existe una lesión aguda. La presencia de escayolas, férulas o vendajes rígidos puede limitar el campo de visión. Si llevas heridas abiertas o suturas recientes, coméntalo antes de iniciar la prueba.</p>
+  </div>
+</div>
+
+<figure class="exam-image-card">
+ <img src="imagenes/ecomuscular.png" alt="Paciente durante TAC abdominal" width="512" height="341" loading="lazy" />
+ <figcaption class="exam-image-caption">Ecografía de brazo.</figcaption>
+    </figure>
+  </div>
+</details>
+
+				<!--ECOGRAFIA PELVICA-->
+ <details class="exam">
+    <summary>
+      <div class="exam-summary-main">
+         <span class="exam-name">Ecografía Pélvica</span>
+         <span class="exam-area">Útero · ovarios · pelvis femenina (vía abdominal)</span>
+      </div>
+      <div class="exam-icon" aria-hidden="true"><span>🎗️</span></div>
+    </summary>
+   
+      <div class="exam-content">
+      <div class="exam-text-block">
+<div><div class="pill-label"><strong>Indicaciones</strong></div><p>Estudio de dolor pélvico, reglas abundantes o irregulares, sospecha de miomas o quistes ováricos, control de patología uterina y seguimiento de hallazgos en revisiones ginecológicas previas. Esta ficha se refiere exclusivamente a la ecografía pélvica realizada desde el abdomen (no incluye la exploración transvaginal).</p>
+</div>
+             
+<div><div class="pill-label"><strong>Preparación previa</strong></div><p>Habitualmente se solicita acudir con la vejiga moderadamente llena, bebiendo agua antes de la prueba y evitando orinar justo antes de entrar. Una vejiga llena actúa como "ventana" y facilita la visualización del útero y los ovarios desde el abdomen.</p>
+</div>
+              
+<div><div class="pill-label"><strong>Procedimiento</strong></div><p>Estarás tumbada boca arriba. Se aplicará gel sobre la parte baja del abdomen y se desplazará la sonda sobre el vientre para estudiar útero, ovarios y el resto de la pelvis. No se introduce ningún aparato en la vagina en este tipo de ecografía.</p>
+</div>
+              
+<div class="contra"><div class="pill-label"style="color: #b91c1c; font-weight: 600;"><strong>Contraindicaciones y precauciones</strong></div><p>No suele tener contraindicaciones relevantes. En pacientes con dificultad para mantener la vejiga llena o con cicatrices quirúrgicas recientes, la exploración puede ser algo más limitada. Si tu especialista considera necesaria una ecografía transvaginal, te explicará específicamente en qué consiste y se realizará en condiciones de intimidad y consentimiento informado.</p>
+    </div>
+ </div>
+           
+<figure class="exam-image-card">
+<img src="imagenes/ecoabdomen.png" alt="Paciente durante angio TAC" width="512" height="341" loading="lazy" />
+ <figcaption class="exam-image-caption">Paciente realizándose una ecografía de útero.</figcaption>
+ </figure>
+</div>
+</details>
+
+
+						<!--ECOGRAFÍA VESICAL-->
+        <details class="exam">
+          <summary>
+            <div class="exam-summary-main">
+              <span class="exam-name">Ecografía Vesical</span>
+              <span class="exam-area">Vejiga urinaria</span>
+            </div>
+            <div class="exam-icon" aria-hidden="true"><span>💧</span></div>
+          </summary>
+         
+ <div class="exam-content">
+  <div class="exam-text-block">
+              
+<div><div class="pill-label"><strong>Indicaciones</strong></div><p>Valoración del volumen de orina residual tras la micción, estudio de infecciones urinarias, sospecha de pólipos o tumores vesicales, y seguimiento en pacientes con sondaje o problemas de vaciado.</p></div>
+              
+<div><div class="pill-label"><strong>Preparación previa</strong></div><p>Se recomienda beber agua antes de la prueba para acudir con ganas moderadas de orinar. No vacíes la vejiga justo antes de entrar, salvo que el equipo te indique lo contrario.</p></div>
+
+<div><div class="pill-label"><strong>Procedimiento</strong></div><p>Tumbado boca arriba, se aplica gel sobre la parte baja del abdomen (por encima del pubis) y se estudia la vejiga llena. En algunos casos se repetirá la medida tras orinar para valorar cuánto líquido queda dentro.</p></div>
+              
+<div class="contra"><div class="pill-label"style="color: #b91c1c; font-weight: 600;"><strong>Contraindicaciones y precauciones</strong></div><p>No existen contraindicaciones significativas. Si tienes mucha urgencia miccional o dolor, avisa al técnico para adaptar el procedimiento. En presencia de heridas o cicatrices recientes sobre el pubis la exploración puede ser algo más incómoda.</p></div>
+ </div>
+            
+<figure class="exam-image-card">
+<img src="imagenes/ecouro.png" alt="Paciente preparado para un TAC" width="512" height="288" loading="lazy" /><figcaption class="exam-image-caption">El paciente se encuentra acosta mientras elMédico realiza la exploración.</figcaption>
+ </figure>
+  </div>
+ </details>
+
+
+				<!--ECOGRAFIA TESTICULAR-->
+
+<details class="exam">
+     <summary>
+        <div class="exam-summary-main">
+          <span class="exam-name">Ecografía Testicular</span>
+          <span class="exam-area">Testículos y estructuras cercanas</span>
+            </div>
+           <div class="exam-icon" aria-hidden="true"><span>👨🏽</span></div>
+          </summary>
+         
+ <div class="exam-content">
+  <div class="exam-text-block">
+              
+    <div><div class="pill-label"><strong>Indicaciones</strong></div><p>Dolor o aumento de tamaño testicular, bultos palpables, traumatismos en la zona, estudio de varicocele, control de tumores o quistes y valoración de infertilidad masculina.</p></div>
+              
+    <div><div class="pill-label"><strong>Preparación previa</strong></div><p>Se recomienda beber agua antes de la prueba para acudir con ganas moderadas de orinar. No vacíes la vejiga justo antes de entrar, salvo que el equipo te indique lo contrario.</p></div>
+
+    <div><div class="pill-label"><strong>Procedimiento</strong></div><p>Generalmente estarás tumbado boca arriba. Se aplicará gel sobre el escroto y se apoyará la sonda con suavidad para estudiar cada testículo. A veces se comprueba la circulación con Doppler. La exploración suele ser rápida y, aunque pueda resultar algo incómoda, no debería ser dolorosa.</p></div>
+              
+    <div class="contra"><div class="pill-label"style="color: #b91c1c; font-weight: 600;"><strong>Contraindicaciones y precauciones</strong></div><p>No se conocen contraindicaciones importantes. Si presentas dolor intenso, inflamación marcada, infecciones de piel o heridas recientes, coméntalo antes de comenzar para adaptar la exploración..</p></div>
+            </div>
+            
+<figure class="exam-image-card">
+              <img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/037d9120e1ed9215c110ec965a7f083c6c820397.jpg" alt="Paciente preparado para un TAC" width="512" height="288" loading="lazy" />
+              <figcaption class="exam-image-caption">El TAC musculoesquelético se usa mucho para huesos, articulaciones y planificación de cirugía traumatológica.</figcaption>
+            </figure>
+          </div>
+        </details>
+
+				<!--ECOGRAFIA TIROIDEA CERVICAL-->
+
+<details class="exam">
+  <summary>
+     <div class="exam-summary-main">
+       <span class="exam-name">Ecografía Tiroidea / Cervical</span>
+       <span class="exam-area">Tiroides · ganglios del cuello · glándulas salivales</span>
+     </div>
+     <div class="exam-icon" aria-hidden="true"><span>🩻</span></div>
+  </summary>
+         
+ <div class="exam-content">
+  <div class="exam-text-block">
+    <div><div class="pill-label"><strong>Indicaciones</strong></div><p>Estudio de nódulos tiroideos, aumento de tamaño de la glándula, alteraciones hormonales tiroideas, control de bocio y valoración de ganglios en el cuello.</p></div>
+              
+    <div><div class="pill-label"><strong>Preparación previa</strong></div><p>No requiere ayuno ni preparación específica. Se recomienda acudir sin collares o prendas muy ajustadas al cuello para facilitar el acceso a la zona.</p></div>
+
+    <div><div class="pill-label"><strong>Procedimiento</strong></div><p>Te tumbarás boca arriba con el cuello ligeramente extendido, apoyando la cabeza en una pequeña almohada. Se aplicará gel sobre la parte anterior del cuello y se deslizará la sonda para revisar tiroides y ganglios. Es una exploración corta y bien tolerada.</p></div>
+              
+    <div class="contra"><div class="pill-label"style="color: #b91c1c; font-weight: 600;"><strong>Contraindicaciones y precauciones</strong></div><p>No existen contraindicaciones relevantes. En pacientes con cicatrices recientes en el cuello, problemas respiratorios al extenderlo o dolor intenso en la zona, la posición puede adaptarse para mayor comodidad.</p></div>
+ </div>
+            
+<figure class="exam-image-card">
+   <img src="imagenes/ecotiroides.jpg" alt="Paciente preparado para un TAC" width="512" height="288" loading="lazy" />
+   <figcaption class="exam-image-caption">Ecografía realizada sobre el tiroides.</figcaption>
+</figure>
+   </div>
+</details>
+
+
+				<!--ECOGRAFIA CARDIACA-->
+
+<details class="exam">
+   <summary>
+    <div class="exam-summary-main">
+       <span class="exam-name">Ecografía Cardíaca</span>
+       <span class="exam-area">Corazón · Válvulas</span>
+         </div>
+    <div class="exam-icon" aria-hidden="true"><span>🫀</span></div>
+  </summary>
+         
+ <div class="exam-content">
+  <div class="exam-text-block">
+              
+<div><div class="pill-label"><strong>Indicaciones</strong></div><p>Insuficiencias cardíacas, defectos en las válvulas y otras anomalías estructurales. También permite medir la función cardíaca.</p></div>
+              
+<div><div class="pill-label"><strong>Preparación previa</strong></div><p>No requiere en general de preparación especial previa, pero se recomienda evitar comidas abundantes antes de la prueba.</p></div>
+
+<div><div class="pill-label"><strong>Procedimiento</strong></div><p>Se acostará en la camilla generalmente, en posición lateral izquierda y, se aplicará un gel para facilitar el estudio.y deslizará la sonda por distintas zonas mientras te pide que cojas aire y lo mantengas en algunas fases. La prueba suele durar entre 10 y 20 minutos.</p></div>
+              
+<div class="contra"><div class="pill-label"style="color: #b91c1c; font-weight: 600;"><strong>Contraindicaciones y precauciones</strong></div><p>No suele tener contraindicaciones importantes. Puede ser más difícil de valorar si hay mucho gas intestinal, apósitos quirúrgicos recientes o dolor intenso a la palpación. Comenta siempre si estás embarazada, aunque esta exploración es segura en el embarazo.</p></div>
+</div>           
+            
+<figure class="exam-image-card">
+<img src="imagenes/ecocardio.jpg" alt="Paciente preparado para un TAC" width="512" height="288" loading="lazy" />
+<figcaption class="exam-image-caption">Pciente en exploración de ecografía cardíaca.</figcaption>
+  </figure>
+  </div>
+  </details>
+
+    <footer class="page-footer">
+      <p>
+        Esta guía está pensada para ayudar a los pacientes a entender mejor en qué consiste cada tipo de Ecografía.
+        No sustituye la valoración ni las indicaciones individualizadas de tu médico o centro de referencia.
+      </p>
+   <p>
+<footer style="background: #333; color: white; padding: 15px; text-align: center; font-size: 14px;">
+  <p style="margin: 0;">
+        © 2026 <strong>Enrique Molina</strong> | Técnico de Medicina Nuclear | 
+    <a href="https://www.youtube.com/@enmoga1973" style="color: #4CAF50; text-decoration: none;">Canal de YouTube</a>
+    </p>
+   <p style="margin: 5px 0 0 0; font-size: 12px; color: #bdc3c7;">
+        Todos los derechos reservados | <a href="/aviso-legal" style="color: #bdc3c7;">Aviso Legal</a>
+    </p>  
+  
+  </footer>
+  </main>
 </body>
 </html>
