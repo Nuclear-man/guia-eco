@@ -245,16 +245,31 @@
     
    
     
-    		/* ALINEAR BOTONES */
+   		/* ALINEAR BOTONES */
   /* Contenedor para poner botones en línea */
     .botones-container {
       display: flex;              /* Pone elementos en línea */
-      gap: 35px;                  /* Separación entre botones (15px) */
-      justify-content: space-between;        /* Alinea verticalmente */
+      gap: 12px;                  /* Separación entre botones (15px) */
+      justify-content: flex-start;        /* Alinea verticalmente */
       text-decoration: none;
+      aling-items: center;
     }
   
-  
+.btn-link {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+  @media (max-width: 768px) {
+  .botones-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-link {
+    width: 100%;
+    text-align: center;
+  }
+}
   					/* ESTILO BOTONES TIPO ENLACE */
    /* Botones de enlace - ANARANJADO y diferente */
     .btn-link {
@@ -276,6 +291,7 @@
       transform: translateY(-2px);
       box-shadow: 0 6px 16px rgba(255, 156, 20, 0.5);
     }
+
 
   </style>
 </head>
@@ -311,17 +327,13 @@
     </figure>
 </div>   
  </header> 
-    
- 
-        <h1 class="hero-title">Preparación básica para la realización de la ecografía.</h1>
-        <p class="hero-lead">Selecciona el tipo de Ecografía que te han solicitado y despliega la información sobre indicaciones, preparación previa y procedimientos más importantes.</p>
      
-    <br>
-    
+        <h1 class="hero-title">Preparación básica para la realización de la ecografía.</h1>
+        <p class="hero-lead">Selecciona el tipo de Ecografía que te han solicitado y despliega la información sobre indicaciones, preparación previa y procedimientos más importantes.</p>  
+    <br>    
       <!--BOTONES DE ENLACES A OTRAS PAGINAS-->
-<div class="botones-container">
   <p class="hero-lead">Pulsa botón para más enlaces a otras webs de pruebas de Radilogía</p>
-    
+ <div class="botones-container">   
   <button class="btn-link" onclick="window.location.href='https://nuclear-man.github.io/guia-tac/'">GUIA DE TAC</button>
     
   <button class="btn-link" onclick="window.location.href='https://nuclear-man.github.io/Estudios-Medicina-Nuclear/'">GUIA MEDICINA NUCLEAR</button>
