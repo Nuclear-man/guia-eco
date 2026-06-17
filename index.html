@@ -243,42 +243,25 @@
       margin-top: 0.25rem;
     }
     
-    <!--Función que añade o quita la clase 'ampliada’-->
-    function alternarZoom(elemento) {
-      elemento.classList.toggle('ampliada');
-    }
-<!--Proteger el footer automáticament-->
-const observer = new MutationObserver(() => {
-    if (!document.querySelector('footer strong')) {
-        const footer = document.querySelector('footer');
-        if (footer) footer.innerHTML = '<p style="margin:0;text-align:center;">© 2026 <strong>ENMOGA «En compañía y sin rumbo»</strong> - Todos los derechos reservados</p>';
-    }
-});
-observer.observe(document.body, { childList: true, subtree: true });
-
-<!--Bloquear clic derecho y atajos-->
-document.addEventListener('contextmenu', e => e.preventDefault());
-document.addEventListener('keydown', e => {
-    if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I') || (e.ctrlKey && e.key === 'u')) e.preventDefault();
-});
+   
     
-    		<!--ALINEAR BOTONES-->
+    		/* ALINEAR BOTONES */
   /* Contenedor para poner botones en línea */
     .botones-container {
       display: flex;              /* Pone elementos en línea */
-      gap: 110px;                  /* Separación entre botones (15px) */
+      gap: 35px;                  /* Separación entre botones (15px) */
       justify-content: space-between;        /* Alinea verticalmente */
       text-decoration: none;
     }
   
   
-  					<!--ESTILO BOTONES TIPO ENLACE-->
+  					/* ESTILO BOTONES TIPO ENLACE */
    /* Botones de enlace - ANARANJADO y diferente */
     .btn-link {
       background: #ff9c14;        /* Anaranjado (diferente del azul) */
       color: #fff;
       font-weight: 600;
-      padding: 10px 24px;         /* Tamaño pequeño */
+      padding: 5px 10px;         /* Tamaño pequeño */
       font-size: 0.9rem;
       border-radius: 8px;
       border: none;
@@ -390,14 +373,14 @@ document.addEventListener('keydown', e => {
               
         <div><div class="pill-label"><strong>Preparación previa</strong></div><p>Habitualmente se pide acudir en ayunas de 6–8 horas (no comer ni beber, salvo pequeños sorbos de agua para medicación habitual). Evita bebidas gaseosas el día previo. Si eres diabético o estás embarcado en un tratamiento especial, consulta con tu médico antes de modificar la medicación o el desayuno.</p></div>
              
-        <div><div class="pill-label"><strong>Procedimiento</strong></div><p>Estarás tumbado boca arriba sobre la camilla. El profesional aplicará gel sobre el abdomen y deslizará la sonda por distintas zonas mientras te pide que cojas aire y lo mantengas en algunas fases. La prueba suele durar entre 10 y 20 minutos. Suele durar pocos minutos.</p></div>
+        <div><div class="pill-label"><strong>Procedimiento</strong></div><p>Estarás tumbado boca arriba sobre la camilla. El profesional aplicará gel sobre el abdomen y deslizará la sonda por distintas zonas mientras te pide que cojas aire y lo mantengas en algunas fases. La prueba suele durar poco tiempo, entre 10 y 20 minutos.</p></div>
              
 	<div class="contra">
   		<div class="pill-label"><strong>Posibles contraindicaciones o limitaciones</strong></div><p> No suele tener contraindicaciones importantes. Puede ser más difícil de valorar si hay mucho gas intestinal, apósitos quirúrgicos recientes o dolor intenso a la palpación. Comenta siempre si estás embarazada, aunque esta exploración es segura en el embarazo.</p>
         </div>
           </div>
 <figure class="exam-image-card"><img src="imagenes/ecoabdomen.png" alt="Equipo ecografia" width="512" height="288" loading="lazy" />
- <figcaption class="exam-image-caption">En un TAC craneal la cabeza se coloca alineada y el estudio suele ser muy rápido.</figcaption>
+ <figcaption class="exam-image-caption">Ecografía abdominal realizada para valorar hígado, vesícula, páncreas, riñones y otras estructuras abdominales.</figcaption>
             </figure>
           </div>
         </details>
@@ -494,7 +477,7 @@ document.addEventListener('keydown', e => {
  </div>
              
 <figure class="exam-image-card">
-<img src="imagenes/ecodoppler.jpg" alt="Equipo TAC craneal" width="512" height="288" loading="lazy" />
+<img src="imagenes/ecodoppler.jpg" alt="Ecografía Doppler vascular" width="512" height="288" loading="lazy" />
 <figcaption class="exam-image-caption">Eco-Doppler de Miembros Inferiores.</figcaption>
 </figure>
  </div>
@@ -514,9 +497,6 @@ document.addEventListener('keydown', e => {
    <div class="exam-text-block">
               
 <div><div class="pill-label"><strong>Indicaciones</strong></div><p>Dolor abdominal, apendicitis, diverticulitis, litiasis, estudio de tumores, traumatismos, hemorragias internas o control postoperatorio.</p>
-</div>
-              
-<div><div class="pill-label"><strong>Preparación previa</strong></div><p>Dolor o lesiones en hombro, codo, muñeca, cadera, rodilla o tobillo; sospecha de rotura muscular o tendinosa, derrames articulares, bursitis y estudio de bultos subcutáneos (quistes, lipomas, etc.).</p>
 </div>
               
 <div><div class="pill-label"><strong>Preparación previa</strong></div><p>No suele requerir preparación especial. Se recomienda llevar ropa que permita descubrir fácilmente la articulación o zona a estudiar (por ejemplo, tirantes para el hombro o pantalón corto para la rodilla).</p>
@@ -562,7 +542,7 @@ document.addEventListener('keydown', e => {
  </div>
            
 <figure class="exam-image-card">
-<img src="imagenes/ecoabdomen.png" alt="Paciente durante angio TAC" width="512" height="341" loading="lazy" />
+<img src="imagenes/ecoabdomen.png" alt="Ecografía Doppler vascular" width="512" height="341" loading="lazy" />
  <figcaption class="exam-image-caption">Paciente realizándose una ecografía de útero.</figcaption>
  </figure>
 </div>
@@ -592,7 +572,7 @@ document.addEventListener('keydown', e => {
  </div>
             
 <figure class="exam-image-card">
-<img src="imagenes/ecouro.png" alt="Paciente preparado para un TAC" width="512" height="288" loading="lazy" /><figcaption class="exam-image-caption">El paciente se encuentra acosta mientras elMédico realiza la exploración.</figcaption>
+<img src="imagenes/ecouro.png" alt="Ecografía vesical" width="512" height="288" loading="lazy" /><figcaption class="exam-image-caption">El paciente se encuentra acosta mientras elMédico realiza la exploración.</figcaption>
  </figure>
   </div>
  </details>
@@ -622,8 +602,8 @@ document.addEventListener('keydown', e => {
             </div>
             
 <figure class="exam-image-card">
-              <img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/037d9120e1ed9215c110ec965a7f083c6c820397.jpg" alt="Paciente preparado para un TAC" width="512" height="288" loading="lazy" />
-              <figcaption class="exam-image-caption">El TAC musculoesquelético se usa mucho para huesos, articulaciones y planificación de cirugía traumatológica.</figcaption>
+              <img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/037d9120e1ed9215c110ec965a7f083c6c820397.jpg" alt="Ecografía testicular" width="512" height="288" loading="lazy" />
+              <figcaption class="exam-image-caption">Ecografía testicular utilizada para valorar testículos, epidídimo, varicocele y otras alteraciones escrotales.</figcaption>
             </figure>
           </div>
         </details>
@@ -651,7 +631,7 @@ document.addEventListener('keydown', e => {
  </div>
             
 <figure class="exam-image-card">
-   <img src="imagenes/ecotiroides.jpg" alt="Paciente preparado para un TAC" width="512" height="288" loading="lazy" />
+   <img src="imagenes/ecotiroides.jpg" alt="Ecografía tiroidea" width="512" height="288" loading="lazy" />
    <figcaption class="exam-image-caption">Ecografía realizada sobre el tiroides.</figcaption>
 </figure>
    </div>
@@ -683,7 +663,7 @@ document.addEventListener('keydown', e => {
             
 <figure class="exam-image-card">
 <img src="imagenes/ecocardio.jpg" alt="Paciente preparado para un TAC" width="512" height="288" loading="lazy" />
-<figcaption class="exam-image-caption">Pciente en exploración de ecografía cardíaca.</figcaption>
+<figcaption class="exam-image-caption">Paciente en exploración de ecografía cardíaca.</figcaption>
   </figure>
   </div>
   </details>
@@ -693,17 +673,57 @@ document.addEventListener('keydown', e => {
         Esta guía está pensada para ayudar a los pacientes a entender mejor en qué consiste cada tipo de Ecografía.
         No sustituye la valoración ni las indicaciones individualizadas de tu médico o centro de referencia.
       </p>
-   <p>
-<footer style="background: #333; color: white; padding: 15px; text-align: center; font-size: 14px;">
+   
+<div style="background: #333; color: white; padding: 15px; text-align: center; font-size: 14px;">
   <p style="margin: 0;">
         © 2026 <strong>Enrique Molina</strong> | Técnico de Medicina Nuclear | 
     <a href="https://www.youtube.com/@enmoga1973" style="color: #4CAF50; text-decoration: none;">Canal de YouTube</a>
     </p>
    <p style="margin: 5px 0 0 0; font-size: 12px; color: #bdc3c7;">
         Todos los derechos reservados | <a href="/aviso-legal" style="color: #bdc3c7;">Aviso Legal</a>
-    </p>  
-  
-  </footer>
+    </p>
+</div>  
+ </footer>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const exams = document.querySelectorAll('.exam');
+
+    exams.forEach(exam => {
+      exam.addEventListener('toggle', () => {
+        if (exam.open) {
+
+          exams.forEach(otherExam => {
+            if (otherExam !== exam) {
+              otherExam.removeAttribute('open');
+            }
+          });
+        }
+      });
+    });
+  });
+
+ /* Función que añade o quita la clase 'ampliada’ */
+    function alternarZoom(elemento) {
+      elemento.classList.toggle('ampliada');
+    }
+
+/* Proteger el footer automáticament */
+const observer = new MutationObserver(() => {
+    if (!document.querySelector('footer strong')) {
+        const footer = document.querySelector('footer');
+        if (footer) footer.innerHTML = '<p style="margin:0;text-align:center;">© 2026 <strong>ENMOGA «En compañía y sin rumbo»</strong> - Todos los derechos reservados</p>';
+    }
+});
+observer.observe(document.body, { childList: true, subtree: true });
+
+/* Bloquear clic derecho y atajos */
+document.addEventListener('contextmenu', e => e.preventDefault());
+document.addEventListener('keydown', e => {
+    if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I') || (e.ctrlKey && e.key === 'u')) e.preventDefault();
+});
+
+  </script> 
   </main>
 </body>
 </html>
