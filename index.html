@@ -245,7 +245,7 @@
     
    
     
-   		/* ALINEAR BOTONES */
+    		/* ALINEAR BOTONES */
   /* Contenedor para poner botones en línea */
     .botones-container {
       display: flex;              /* Pone elementos en línea */
@@ -273,7 +273,7 @@
   					/* ESTILO BOTONES TIPO ENLACE */
    /* Botones de enlace - ANARANJADO y diferente */
     .btn-link {
-      background: #ff9c14;        /* Anaranjado (diferente del azul) */
+      background: #01696f;        /* Azul verdoso (diferente del azul) */
       color: #fff;
       font-weight: 600;
       padding: 5px 10px;         /* Tamaño pequeño */
@@ -292,7 +292,30 @@
       box-shadow: 0 6px 16px rgba(255, 156, 20, 0.5);
     }
 
+			/* BOTON VOLVER O CERRAR*/
+.pill-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 6px;
+}
 
+.btn-volver {
+  background: #01696f;                   /* Azul verdoso */
+  color: #fff;
+  font-weight: 600;
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(255, 156, 20, 0.25);
+}
+
+.btn-volver:hover {
+  background: #e88d0c;             /* Anaranjado más oscuro */
+}
   </style>
 </head>
 
@@ -302,15 +325,16 @@
     <header class="page-header">
       <div class="brand" aria-label="Ecografía fácil: guía para pacientes">
 		 <div class="brand-mark" aria-hidden="true">
-		<svg viewBox="0 0 48 48" role="img" aria-label="Icono de TAC minimalista">
+		<!--<svg viewBox="0 0 48 48" role="img" aria-label="Icono de TAC minimalista">
             <circle cx="24" cy="20" r="11" fill="none" stroke="currentColor" stroke-width="2" />
             <circle cx="24" cy="20" r="4" fill="none" stroke="currentColor" stroke-width="2" />
             <rect x="11" y="31" width="26" height="5" rx="2.5" fill="currentColor" opacity="0.15" />
             <rect x="18" y="28" width="12" height="4" rx="2" fill="currentColor" opacity="0.25" />
-          </svg>
-           <!--<img src="imagenes/logoazulvintage.png"alt="logo" width="1000" height="1000" loading="lazy" />-->
+          </svg>-->
+     <img src="imagenes/logoazulvintage.png"alt="logo" width="1000" height="1000" loading="lazy" />
 	  </div>
-        <!--TITULO-->
+       
+ <!--TITULO-->
         <div class="brand-text">
           <div class="brand-text-title">Ecografía Fácil</div>
           <div class="brand-text-sub">Información clara para tu cita de ecografía</div>
@@ -327,11 +351,15 @@
     </figure>
 </div>   
  </header> 
-     
+    
+ 
         <h1 class="hero-title">Preparación básica para la realización de la ecografía.</h1>
-        <p class="hero-lead">Selecciona el tipo de Ecografía que te han solicitado y despliega la información sobre indicaciones, preparación previa y procedimientos más importantes.</p>  
-    <br>    
+        <p class="hero-lead">Selecciona el tipo de Ecografía que te han solicitado y despliega la información sobre indicaciones, preparación previa y procedimientos más importantes.</p>
+     
+    <br>
+    
       <!--BOTONES DE ENLACES A OTRAS PAGINAS-->
+
   <p class="hero-lead">Pulsa botón para más enlaces a otras webs de pruebas de Radilogía</p>
  <div class="botones-container">   
   <button class="btn-link" onclick="window.location.href='https://nuclear-man.github.io/guia-tac/'">GUIA DE TAC</button>
@@ -390,7 +418,12 @@
 	<div class="contra">
   		<div class="pill-label"><strong>Posibles contraindicaciones o limitaciones</strong></div><p> No suele tener contraindicaciones importantes. Puede ser más difícil de valorar si hay mucho gas intestinal, apósitos quirúrgicos recientes o dolor intenso a la palpación. Comenta siempre si estás embarazada, aunque esta exploración es segura en el embarazo.</p>
         </div>
-          </div>
+
+    <button class="btn-volver" type="button" onclick="this.closest('details').removeAttribute('open')">
+    Cerrar
+    </button>
+</div>
+
 <figure class="exam-image-card"><img src="imagenes/ecoabdomen.png" alt="Equipo ecografia" width="512" height="288" loading="lazy" />
  <figcaption class="exam-image-caption">Ecografía abdominal realizada para valorar hígado, vesícula, páncreas, riñones y otras estructuras abdominales.</figcaption>
             </figure>
@@ -422,6 +455,10 @@
 <div class="contra">
  <div class="pill-label"><strong>Posibles contraindicaciones o limitaciones</strong></div><p> No suele tener contraindicaciones importantes. Puede ser más difícil de valorar si hay mucho gas intestinal, apósitos quirúrgicos recientes o dolor intenso a la palpación. Comenta siempre si estás embarazada, aunque esta exploración es segura en el embarazo.</p>
  </div>
+
+  <button class="btn-volver" type="button" onclick="this.closest('details').removeAttribute('open')">
+    Cerrar
+    </button>
 </div>
 
 <figure class="exam-image-card">
@@ -454,6 +491,10 @@
     </div>
     	<p>No existen contraindicaciones relevantes. En presencia de cicatrices recientes, hematomas o dolor intenso, algunas zonas pueden ser más sensibles. Comunica siempre si estás en seguimiento por un especialista de mama.</p>
   </div>
+
+  <button class="btn-volver" type="button" onclick="this.closest('details').removeAttribute('open')">
+    Cerrar
+    </button>
     </div>
  
 <figure class="exam-image-card">
@@ -494,7 +535,12 @@
   	<p>No suele tener contraindicaciones. 
 		Puede resultar algo molesta si hay heridas recientes, hematomas o dolor al comprimir la zona. En casos concretos (úlceras abiertas, infecciones extensas) la exploración puede adaptarse o posponerse según criterio médico.</p>
  </div>
+
+  <button class="btn-volver" type="button" onclick="this.closest('details').removeAttribute('open')">
+    Cerrar
+    </button>
   </div>           
+
 <figure class="exam-image-card">
 <img src="imagenes/ecodoppler.jpg" alt="Ecografía Doppler vascular" width="512" height="288" loading="lazy" />
 <figcaption class="exam-image-caption">Eco-Doppler de Miembros Inferiores.</figcaption>
@@ -525,6 +571,10 @@
               
 <div class="contra"><div class="pill-label"style="color: #b91c1c; font-weight: 600;"><strong>Contraindicaciones y precauciones</strong></div><p>En general es una exploración muy segura. Puede resultar dolorosa si existe una lesión aguda. La presencia de escayolas, férulas o vendajes rígidos puede limitar el campo de visión. Si llevas heridas abiertas o suturas recientes, coméntalo antes de iniciar la prueba.</p>
   </div>
+
+  <button class="btn-volver" type="button" onclick="this.closest('details').removeAttribute('open')">
+    Cerrar
+    </button>
 </div>
 
 <figure class="exam-image-card">
@@ -557,6 +607,10 @@
               
 <div class="contra"><div class="pill-label"style="color: #b91c1c; font-weight: 600;"><strong>Contraindicaciones y precauciones</strong></div><p>No suele tener contraindicaciones relevantes. En pacientes con dificultad para mantener la vejiga llena o con cicatrices quirúrgicas recientes, la exploración puede ser algo más limitada. Si tu especialista considera necesaria una ecografía transvaginal, te explicará específicamente en qué consiste y se realizará en condiciones de intimidad y consentimiento informado.</p>
     </div>
+
+  <button class="btn-volver" type="button" onclick="this.closest('details').removeAttribute('open')">
+    Cerrar
+    </button>
  </div>
            
 <figure class="exam-image-card">
@@ -586,8 +640,13 @@
 
 <div><div class="pill-label"><strong>Procedimiento</strong></div><p>Tumbado boca arriba, se aplica gel sobre la parte baja del abdomen (por encima del pubis) y se estudia la vejiga llena. En algunos casos se repetirá la medida tras orinar para valorar cuánto líquido queda dentro.</p></div>
               
-<div class="contra"><div class="pill-label"style="color: #b91c1c; font-weight: 600;"><strong>Contraindicaciones y precauciones</strong></div><p>No existen contraindicaciones significativas. Si tienes mucha urgencia miccional o dolor, avisa al técnico para adaptar el procedimiento. En presencia de heridas o cicatrices recientes sobre el pubis la exploración puede ser algo más incómoda.</p></div>
- </div>
+<div class="contra"><div class="pill-label"style="color: #b91c1c; font-weight: 600;"><strong>Contraindicaciones y precauciones</strong></div><p>No existen contraindicaciones significativas. Si tienes mucha urgencia miccional o dolor, avisa al técnico para adaptar el procedimiento. En presencia de heridas o cicatrices recientes sobre el pubis la exploración puede ser algo más incómoda.</p>
+</div>
+
+  <button class="btn-volver" type="button" onclick="this.closest('details').removeAttribute('open')">
+    Cerrar
+    </button> 
+</div>
             
 <figure class="exam-image-card">
 <img src="imagenes/ecouro.png" alt="Ecografía vesical" width="512" height="288" loading="lazy" /><figcaption class="exam-image-caption">El paciente se encuentra acosta mientras elMédico realiza la exploración.</figcaption>
@@ -616,7 +675,12 @@
 
     <div><div class="pill-label"><strong>Procedimiento</strong></div><p>Generalmente estarás tumbado boca arriba. Se aplicará gel sobre el escroto y se apoyará la sonda con suavidad para estudiar cada testículo. A veces se comprueba la circulación con Doppler. La exploración suele ser rápida y, aunque pueda resultar algo incómoda, no debería ser dolorosa.</p></div>
               
-    <div class="contra"><div class="pill-label"style="color: #b91c1c; font-weight: 600;"><strong>Contraindicaciones y precauciones</strong></div><p>No se conocen contraindicaciones importantes. Si presentas dolor intenso, inflamación marcada, infecciones de piel o heridas recientes, coméntalo antes de comenzar para adaptar la exploración..</p></div>
+    <div class="contra"><div class="pill-label"style="color: #b91c1c; font-weight: 600;"><strong>Contraindicaciones y precauciones</strong></div><p>No se conocen contraindicaciones importantes. Si presentas dolor intenso, inflamación marcada, infecciones de piel o heridas recientes, coméntalo antes de comenzar para adaptar la exploración..</p>
+</div>
+
+  <button class="btn-volver" type="button" onclick="this.closest('details').removeAttribute('open')">
+    Cerrar
+    </button>
             </div>
             
 <figure class="exam-image-card">
@@ -645,7 +709,12 @@
 
     <div><div class="pill-label"><strong>Procedimiento</strong></div><p>Te tumbarás boca arriba con el cuello ligeramente extendido, apoyando la cabeza en una pequeña almohada. Se aplicará gel sobre la parte anterior del cuello y se deslizará la sonda para revisar tiroides y ganglios. Es una exploración corta y bien tolerada.</p></div>
               
-    <div class="contra"><div class="pill-label"style="color: #b91c1c; font-weight: 600;"><strong>Contraindicaciones y precauciones</strong></div><p>No existen contraindicaciones relevantes. En pacientes con cicatrices recientes en el cuello, problemas respiratorios al extenderlo o dolor intenso en la zona, la posición puede adaptarse para mayor comodidad.</p></div>
+    <div class="contra"><div class="pill-label"style="color: #b91c1c; font-weight: 600;"><strong>Contraindicaciones y precauciones</strong></div><p>No existen contraindicaciones relevantes. En pacientes con cicatrices recientes en el cuello, problemas respiratorios al extenderlo o dolor intenso en la zona, la posición puede adaptarse para mayor comodidad.</p>
+</div>
+
+  <button class="btn-volver" type="button" onclick="this.closest('details').removeAttribute('open')">
+    Cerrar
+    </button>
  </div>
             
 <figure class="exam-image-card">
@@ -677,6 +746,10 @@
 <div><div class="pill-label"><strong>Procedimiento</strong></div><p>Se acostará en la camilla generalmente, en posición lateral izquierda y, se aplicará un gel para facilitar el estudio.y deslizará la sonda por distintas zonas mientras te pide que cojas aire y lo mantengas en algunas fases. La prueba suele durar entre 10 y 20 minutos.</p></div>
               
 <div class="contra"><div class="pill-label"style="color: #b91c1c; font-weight: 600;"><strong>Contraindicaciones y precauciones</strong></div><p>No suele tener contraindicaciones importantes. Puede ser más difícil de valorar si hay mucho gas intestinal, apósitos quirúrgicos recientes o dolor intenso a la palpación. Comenta siempre si estás embarazada, aunque esta exploración es segura en el embarazo.</p></div>
+
+  <button class="btn-volver" type="button" onclick="this.closest('details').removeAttribute('open')">
+    Cerrar
+    </button>
 </div>           
             
 <figure class="exam-image-card">
