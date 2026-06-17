@@ -72,20 +72,14 @@
     }
     .brand { display: flex; align-items: center; gap: var(--space-3); }
     .brand-mark {
-  width: 100px;
-  height: 100px;
-  border-radius: 18px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.brand-mark img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
+      width: 100px;
+      height: 100px;
+      border-radius: 18px;
+      background: radial-gradient(circle at 30% 20%, #ffffff 0, #e2f0f1 40%, #01696f 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-md);
     }
     .brand-mark svg { width: 32px; height: 32px; }
     .brand-text-title { font-size: var(--text-xl); font-weight: 600; letter-spacing: 0.02em; }
@@ -322,11 +316,37 @@
 .btn-volver:hover {
   background: #e88d0c;             /* Anaranjado más oscuro */
 }
+
+				/*BOTON FLOTANTE SUBIR*/
+.btn-subir {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  background-color: #01696f;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: 700;
+  box-shadow: 0 6px 16px rgba(1, 105, 111, 0.35);
+  z-index: 1000;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn-subir:hover {
+  background-color: #0c4e54;
+  transform: translateY(-2px);
+}
   </style>
 </head>
 
 					<!--ENCABEZADO-->
-<body>
+<body id="top">
   <main class="page">
     <header class="page-header">
       <div class="brand" aria-label="Ecografía fácil: guía para pacientes">
@@ -337,7 +357,7 @@
             <rect x="11" y="31" width="26" height="5" rx="2.5" fill="currentColor" opacity="0.15" />
             <rect x="18" y="28" width="12" height="4" rx="2" fill="currentColor" opacity="0.25" />
           </svg>-->
-     <img src="./imagenes/logoazulvintage.png"alt="logo" width="100" height="100" loading="lazy" />
+     <img src="C:\Users\emolina\Downloads\logoazulvintage.png"alt="logo" width="1000" height="1000" loading="lazy" />
 	  </div>
        
  <!--TITULO-->
@@ -821,6 +841,6 @@ document.addEventListener('keydown', e => {
 });
 
   </script> 
-  </main>
+  </main><a href="#top" class="btn-subir" aria-label="Subir al inicio">↑</a>
 </body>
 </html>
